@@ -1,6 +1,6 @@
 import React from 'react';
 import './Cashback.css';
-import cashback from "../../assets/Food_Image/Cashback.png"
+import cashback from "../../assets/Food_Image/Cashback.webp"
 import Navbar from '../../components/Navbar/Navbar';
 
 function Cashback() {
