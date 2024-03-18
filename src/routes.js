@@ -16,6 +16,7 @@ import Cashback from "./components/Cashback/Cashback.jsx";
 import Gift from "./components/Feature/Gift/Gift.jsx";
 import SevenOrder from "./components/Feature/SevenOrder/SevenOrder.jsx";
 import Deal from "./components/Deal/Deal.jsx";
+import SevenDay from "./components/SevenDay/SevenDay.jsx";
 
 const router = createBrowserRouter([
     {
@@ -79,6 +80,11 @@ const router = createBrowserRouter([
     {
         path: "Deal",
         element: <Deal />
+    },
+    
+    {
+        path: "SevenDay",
+        element: <SevenDay />
     }
 ]);
 

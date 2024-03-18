@@ -53,13 +53,13 @@ const FeatureCard = () => {
       icon: <SiSongoda className="card-front__icon" />,
     },
     {
-      OutSideTitle: "Pizza",
-      OutSidePrice: "$20",
+      OutSideTitle: "7 Days Order Bonus",
+      OutSidePrice: "Feature 4",
       Video: video2,
-      insideTitle: "One your Favorit food",
+      insideTitle: "7 Days Order Bonus",
       insideDescription:
-        "As cities never sleep, there are always something going on, no matter what time!",
-      insideLink: "/Feature",
+        "If someone Orders 7 days in a row, We will provide Bonus!",
+      insideLink: "/SevenOrder",
       color: "card-front__tp--camping",
       textColor: "card-front__text-view--camping",
       buttonColor: "inside-page__btn--camping",

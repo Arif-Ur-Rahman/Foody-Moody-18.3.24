@@ -1,6 +1,6 @@
 import React from 'react';
 import './SevenOrder.css';
-import OfferBanner from '../../../assets/Food_Image/special_day_Gift.jpg';
+import OfferBanner from '../../../assets/Banner/7_Day_order_in_a_row_Bonus.webp';
 import Navbar from "../../../components/Navbar/Navbar";
 import Footer from "../../../container/Footer/Footer"
 
