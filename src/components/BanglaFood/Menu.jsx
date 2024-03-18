@@ -18,7 +18,7 @@ const products = [
     ingredients: "Rice, Chicken, Vegetables",
   },
   {
-    id: 12,
+    id: 2,
     image: food3,
     title: "Delicious Food 3",
     oldPrice: 20,
@@ -26,7 +26,7 @@ const products = [
     ingredients: "Rice, Chicken, Vegetables",
   },
   {
-    id: 21,
+    id: 3,
     image: food2,
     title: "Delicious Food 2",
     oldPrice: 20,
@@ -34,7 +34,7 @@ const products = [
     ingredients: "Rice, Chicken, Vegetables",
   },
   {
-    id: 51,
+    id: 4,
     image: food1,
     title: "Delicious Food 1",
     oldPrice: 20,
@@ -42,7 +42,7 @@ const products = [
     ingredients: "Rice, Chicken, Vegetables",
   },
   {
-    id: 34,
+    id: 5,
     image: food4,
     title: "Delicious Food 4",
     oldPrice: 20,

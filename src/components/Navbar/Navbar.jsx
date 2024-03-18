@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
-import { FaShoppingCart, FaSearch, FaUser } from "react-icons/fa";
+import { FaShoppingCart, FaSearch, FaUser, faTrash } from "react-icons/fa";
 import images from "../../constants/images";
 import { Link } from "react-router-dom";
 import Megamenu from "../Megamenu/Megamenu";
@@ -11,7 +11,7 @@ import { Dropdown } from "react-bootstrap";
 import { CartContext } from "../../context/rootContext";
 
 const Navbar = () => {
-  const { cart } = useContext(CartContext);
+  const { cart, removeFromCart } = useContext(CartContext);
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showSubscriptionMegamenu, setShowSubscriptionMegamenu] =
     useState(false);
@@ -24,10 +24,15 @@ const Navbar = () => {
   const addToCart = (item) => {
     setCartItems([...cartItems, item]);
   };
+  const calculateTotal = (cart) => {
+    return cart.reduce((total, item) => total + item.newPrice, 0).toFixed(2);
+  };
 
   // Function to remove items from the cart
-  const removeFromCart = (itemToRemove) => {
-    setCartItems(cartItems.filter((item) => item !== itemToRemove));
+  const handleRemoveItem = (itemId) => {
+    const updatedCart = cartItems.filter((item) => item.id !== itemId);
+    setCartItems(updatedCart);
+    removeFromCart(itemId);
   };
 
   return (
@@ -74,30 +79,42 @@ const Navbar = () => {
           </div>
           {showCartModal && (
             <div className="cart-modal-container">
-            <div className="cart-modal">
-              <div>
-                {cart && Array.isArray(cart) && cart.length > 0 ? (
-                  cart.map((item) => (
-                    <div key={item.id} className="cart-item">
-                      <div className="cart-item-image">
-                        <img src={item.image} alt={item.title} />
+              <div className="cart-modal">
+                <div>
+                  {cart && Array.isArray(cart) && cart.length > 0 ? (
+                    cart.map((item) => (
+                      <div key={item.id} className="cart-item">
+                        <div className="cart-item-image">
+                          <img src={item.image} alt={item.title} />
+                        </div>
+                        <div className="cart-item-details">
+                          <span>{item.title}</span>
+                        </div>
+                        <div className="cart-item-price">
+                          <span>{item.newPrice}</span>
+                        </div>
+                        <div
+                          className="cart-item-remove"
+                          onClick={() => handleRemoveItem(item.id)}
+                        >
+                          <faTrash />
+                        </div>
                       </div>
-                      <div className="cart-item-details">
-                        <span>{item.title}</span>
-                        <span>{item.price}</span>
-                      </div>
-                    </div>
-                  ))
-                ) : (
-                  <span className="empty-cart-message">Cart is Empty!</span>
-                )}
-              </div>
-              {/* Add the link below the cart */}
-              <div className="proceed-to-checkout">
-                <Link to="/cart">Proceed to Checkout</Link>
+                    ))
+                  ) : (
+                    <span className="empty-cart-message">Cart is Empty!</span>
+                  )}
+                </div>
+                <div className="cart-summary-total">
+                  <span>Total:</span>
+                  <span>{calculateTotal(cart)}</span>
+                </div>
+                {/* Add the link below the cart */}
+                <div className="proceed-to-checkout">
+                  <Link to="/cart">Proceed to Checkout</Link>
+                </div>
               </div>
             </div>
-          </div>
           )}
         </div>
         <div className="icon" onClick={() => setShowCartModal(!showCartModal)}>
