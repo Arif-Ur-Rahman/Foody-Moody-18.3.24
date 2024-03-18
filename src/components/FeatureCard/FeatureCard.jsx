@@ -39,14 +39,14 @@ const FeatureCard = () => {
       icon: <IoFastFoodOutline className="card-front__icon" />,
     },
     {
-      OutSideTitle: "City break",
-      OutSidePrice: "$29",
+      OutSideTitle: "Deal Of The Day",
+      OutSidePrice: "Feature 3",
       Video: video1,
-      insideTitle: "For urban lovers",
+      insideTitle: "Deal Of The Day",
       insideDescription:
-        "As cities never sleep, there are always something going on, no matter what time!",
+        "One Food for Each Day, With Surprising Offer & Many More!",
 
-      insideLink: "/BanglaFood",
+      insideLink: "/Deal",
       color: "card-front__tp--beach",
       textColor: "card-front__text-view--beach",
       buttonColor: "inside-page__btn--beach",
