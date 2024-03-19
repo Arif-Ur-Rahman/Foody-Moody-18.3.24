@@ -64,6 +64,7 @@ function Menu() {
       <div className={styles.foodItems}>
         {products.map((data) => (
           <FoodCard
+            key= {data.id}
             image={data?.image}
             title={data?.title}
             oldPrice={data?.oldPrice}
@@ -85,6 +86,11 @@ function FoodCard({
   ingredients,
   addToCart,
 }) {
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
   return (
     <div className={styles.foodCard}>
       <img src={image} alt="Food" className={styles.foodImage} />
@@ -107,11 +113,28 @@ function FoodCard({
           <div className={styles.iconContainer} onClick={addToCart}>
             <FontAwesomeIcon icon={faCartPlus} className={styles.icon} />
           </div>
-          <div className={styles.iconContainer}>
+          <div className={styles.iconContainer} onClick={toggleModal}>
             <FontAwesomeIcon icon={faEye} className={styles.icon} />
           </div>
         </div>
       </div>
+      {showModal && (
+        <div className={styles.modal}>
+          <div className={styles.modalContent}>
+            <span onClick={toggleModal} className={styles.close}>
+              &times;
+            </span>
+            <img src={image} alt="Food" className={styles.modalImage} />
+            <h2>{title}</h2>
+            <div>
+              <span>Old Price: ${oldPrice}</span>
+              <span>New Price: ${newPrice}</span>
+            </div>
+            <div>Main Ingredients: {ingredients}</div>
+            <button onClick={addToCart}>Buy</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
