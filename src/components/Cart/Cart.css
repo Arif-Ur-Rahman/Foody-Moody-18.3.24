@@ -1,5 +1,4 @@
 .cart-container {
-  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -21,7 +20,7 @@
 
 .cart-table th,
 .cart-table td {
-  padding: 12px;
+  padding: 2px;
   text-align: left;
 }
 
