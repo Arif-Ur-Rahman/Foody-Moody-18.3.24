@@ -55,7 +55,7 @@ const Hero = () => {
               </h1>
               <div>
                 <button className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full">
-                  Hire Now
+                  Hire
                 </button>
               </div>
             </div>
@@ -71,7 +71,7 @@ const Hero = () => {
                   className="w-[300px] sm:w-[450px] sm:scale-125  mx-auto spin "
                 />
               </div>
-              <div className="flex lg:flex-col lg:top-1/2 lg:-translate-y-1/2 lg:py-2 justify-center gap-4 absolute bottom-[0px] lg:-right-10 bg-white/30 rounded-full">
+              <div className="flex lg:flex-col lg:top-1/2 lg:-translate-y-1/2 lg:py-2 justify-center gap-4 absolute bottom-[0px] lg:right-8 bg-black/70 rounded-full">
                 {ImageList.map((item) => (
                   <img
                     data-aos="zoom-in"
