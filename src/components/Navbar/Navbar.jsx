@@ -84,6 +84,9 @@ const Navbar = () => {
                   {cart && Array.isArray(cart) && cart.length > 0 ? (
                     cart.map((item) => (
                       <div key={item.id} className="cart-item">
+                        <div className="item-sn">
+                          <span>{item.id}</span>
+                        </div>
                         <div className="cart-item-image">
                           <img src={item.image} alt={item.title} />
                         </div>
@@ -97,7 +100,8 @@ const Navbar = () => {
                           className="cart-item-remove"
                           onClick={() => handleRemoveItem(item.id)}
                         >
-                          <faTrash />
+                          <span><faTrash /></span>
+                          
                         </div>
                       </div>
                     ))
