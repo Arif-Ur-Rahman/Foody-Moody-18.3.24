@@ -26,9 +26,11 @@
   }
   
   .app__navbar-links li {
-    margin: 0 2rem;
+    margin: 0 1rem;
     cursor: pointer;
     position: relative; /* Added */
+    font-size: 16px;
+    font-weight: 1000;
   }
   
   .app__navbar-links li:hover {
