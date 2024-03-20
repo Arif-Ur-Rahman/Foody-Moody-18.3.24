@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Hero.css";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import HeroSlider from "./HeroCard";
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   // ---------> event animation  <-------------
@@ -41,13 +42,18 @@ const Hero = () => {
               </div>
               <hr />
               <div className="text-primary hero-btn-middle fw-medium">
-                <button
+
+                <Link to='/feature'className="custom__button"
+                  style={{ marginTop: "2rem" }}
+                >
+                  Buy Now</Link>
+                {/* <button
                   type="button"
                   className="custom__button"
                   style={{ marginTop: "2rem" }}
                 >
                   Buy Now
-                </button>
+                </button> */}
                 <p></p>
               </div>
             </div>

@@ -2,7 +2,7 @@
   font-family: "Inter", sans-serif;
   line-height: 1.5;
   padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-bottom: 10rem;
   height: auto;
   display: flex;
   width: 100%;
@@ -23,7 +23,7 @@
 }
 
 .custom__button {
-  padding: 0;
+  
 }
 
 .bg-gradient {
@@ -35,13 +35,13 @@
 }
 
 .tex-head h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   height: 300px;
   margin: 0 auto;
 }
 
 .tex-head h1 span {
-  font-size: 4rem;
+  font-size: 3rem;
   color: #f97e8f;
   padding-top: 1rem;
 }
