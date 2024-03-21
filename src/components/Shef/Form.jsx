@@ -170,7 +170,7 @@ const Form = () => {
         </div>
         {/* Google reCAPTCHA */}
         <ReCAPTCHA
-          sitekey="6Lce6p8pAAAAAMhp6fj9sVAfvfMH_p5TnmqKksV-"
+          sitekey="6LeZAKApAAAAADIDKMBS_b0nhKqsNWLQB04fgP9a"
           onChange={(value) => setIsCaptchaVerified(value)}
           className="recaptcha-container"
         />
