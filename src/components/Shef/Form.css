@@ -11,6 +11,7 @@
   body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #ffffff;
+    
   }
   
   .container {
@@ -20,7 +21,7 @@
   }
   
   .form-container {
-    background-color: #ebe7e7;
+    background-color: #f5f0f0;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 30px;

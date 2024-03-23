@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar';
 import { Footer } from '../../container';
 import './Subacriptions.css';
 
+
 const Subacriptions = () => {
   return (
     <>
@@ -58,6 +59,7 @@ const Subacriptions = () => {
           </div>
         </section>
       </div>
+      
 
       <Footer />
     </>
