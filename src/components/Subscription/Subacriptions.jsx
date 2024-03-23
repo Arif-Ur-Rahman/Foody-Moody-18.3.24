@@ -23,7 +23,7 @@ const Subacriptions = () => {
                 <li className="pricing-feature">Multiple Food Order</li>
                 <li className="pricing-feature">Food-Order for Occation</li>
               </ul>
-              <button className="pricing-action">Subscribe</button>
+              <a className="pricing-action">Subscribe</a>
             </div>
             
             <div className="pricing-item">
@@ -37,7 +37,7 @@ const Subacriptions = () => {
                 <li className="pricing-feature">Birthday/Annivarsary Gift</li>
                 <li className="pricing-feature">1GB of storage space</li>
               </ul>
-              <button className="pricing-action">Subscribe</button>
+              <a className="pricing-action">Subscribe</a>
             </div>
             
             <div className="pricing-item">
@@ -52,7 +52,7 @@ const Subacriptions = () => {
                 <li className="pricing-feature">Analytics integration</li>
                 <li className="pricing-feature">Unlimited storage space</li>
               </ul>
-              <button className="pricing-action">Subscribe</button>
+              <a className="pricing-action">Subscribe</a>
             </div>
             
           </div>
