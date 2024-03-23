@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import { Footer } from '../../container';
 import './Subacriptions.css';
+import Form from './Form/Form'
 
 
 const Subacriptions = () => {
@@ -60,7 +61,7 @@ const Subacriptions = () => {
         </section>
       </div>
       
-
+      <Form />
       <Footer />
     </>
   );
