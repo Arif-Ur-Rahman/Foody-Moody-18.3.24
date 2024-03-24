@@ -91,7 +91,7 @@ const Subscriptions = () => {
                 <li className="pricing-feature">Multiple Food Order</li>
                 <li className="pricing-feature">Food-Order for Occasion</li>
                 <li className="pricing-feature">Birthday/Anniversary Gift</li>
-                <li className="pricing-feature">1GB of storage space</li>
+                <li className="pricing-feature">7 Days Order Bonus</li>
               </ul>
               <a className="pricing-action" onClick={() => handleSubscribeClick('Standard', 29.90)}>Subscribe</a>
             </div>
@@ -101,12 +101,13 @@ const Subscriptions = () => {
               <div className="pricing-price"><span className="pricing-currency">$</span>59.90</div>
               <p className="pricing-sentence">Gigantic business solution</p>
               <ul className="pricing-feature-list">
-                <li className="pricing-feature">Unlimited calls</li>
-                <li className="pricing-feature">Free hosting</li>
-                <li className="pricing-feature">Unlimited hours of support</li>
-                <li className="pricing-feature">Social media integration</li>
-                <li className="pricing-feature">Analytics integration</li>
-                <li className="pricing-feature">Unlimited storage space</li>
+              <li className="pricing-feature">Order Anytime</li>
+                <li className="pricing-feature">Multiple Food Order</li>
+                <li className="pricing-feature">Food-Order for Occasion</li>
+                <li className="pricing-feature">Birthday/Anniversary Gift</li>
+                <li className="pricing-feature">7 Days Order Bonus</li>
+                <li className="pricing-feature">Food of The Day</li>
+                <li className="pricing-feature">Chef-At-Home Service</li>
               </ul>
               <a className="pricing-action" onClick={() => handleSubscribeClick('Premium', 59.90)}>Subscribe</a>
             </div>
