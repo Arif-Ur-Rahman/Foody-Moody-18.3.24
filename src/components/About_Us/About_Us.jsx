@@ -1,163 +1,97 @@
-import React, { useState, useEffect } from "react";
-import image22 from "../../assets/image-22.png";
-import "./About_Us.css";
+// Import the necessary dependencies
+import React from 'react';
+import './About_Us.css'; // Import your CSS file for styling
+import { AiOutlineMail } from 'react-icons/ai'; // Import Mail icon from react-icons
 
-export default function AboutUs() {
-  const [textGradient, setTextGradient] = useState("");
-  const [isChecked, setIsChecked] = useState(false);
-  const getRandomGradient = () => {
-    const angle = Math.random() * 360;
-    const color1 = getRandomColor();
-    const color2 = getRandomColor();
-    return `linear-gradient(${angle}deg, ${color1}, ${color2})`;
-  };
-  const getRandomColor = () => {
-    const letters = "0123456789ABCDEF";
-    let color = "#";
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  };
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const gradient = getRandomGradient();
-      setTextGradient(gradient);
-    }, 3000); // Change gradient every 3 seconds
-    return () => clearInterval(interval);
-  }, []);
+// Import your images
+import missionImage from '../../assets/About/Mission.png';
+import visionImage from '../../assets/About/Vision.png';
+import serviceImage from '../../assets/About/ourservice.png';
+import gifImage from '../../assets/About/Foody Moody.gif';
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (isChecked) {
-      // Process form submission
-      console.log("Form submitted successfully!");
-    } else {
-      alert("Please verify that you are not a robot.");
-    }
-  };
-  
-
-  const handleCheckboxChange = () => {
-    setIsChecked(!isChecked);
+function AboutUs() {
+  // Handle form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert('Submitted');
   };
 
   return (
-    <>
-      <div className="hero-section">
-        <img src={image22} alt="" className="hero-image" />
+    <div className="about-us-container">
+      {/* Hero section with gif image */}
+      <section className="hero-banner">
+        <img src={gifImage} alt="Foody Moody" className="hero-gif" />
         <div className="hero-content">
-          <h1 className="hero-title">
-            About{" "}
-            <span className="gradient-text">Foody-Moody</span>
-          </h1>
-          <p className="hero-description">
-            The most important thing for us is to give you the comfortable
-            dining experience
-          </p>
+          <h1 className="hero-title">Welcome to Foody Moody</h1>
         </div>
-      </div>
-      <div className="main-content">
-        <div className="section">
-          <div className="story-content">
-            <h2 className="story-title">Our Story</h2>
-            <p className="story-text">
-              Welcome to Foody-Moody, a culinary oasis nestled in the heart of
-              the Netherlands. At Foody-Moody, we are passionate about crafting
-              unforgettable dining experiences that tantalize the taste buds
-              and nourish the soul.
-            </p>
-          </div>
-          <div className="story-image-container">
-            <img
-              src="https://images5.alphacoders.com/648/648257.png"
-              alt=""
-              className="story-image"
-            />
-          </div>
-        </div>
-        <div className="section">
-          <div className="manager-image-container">
-            <img
-              src="https://img.wattpad.com/c2e8cb59530b4373b452716c9fce292f4232d23f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f356c6c6455593963585369696f513d3d2d3739343030363030372e313563643166326538653566333064363534333136333931373334392e676966"
-              alt=""
-              className="manager-image"
-            />
-          </div>
-          <div className="manager-content">
-            <h2 className="manager-title">Restaurant Manager</h2>
-            <p className="manager-name">Arif Ur Rahman</p>
-            <p className="manager-text">
-              Our journey began with a simple yet profound vision: to create a
-              haven where food lovers from all walks of life can come together
-              to indulge in exquisite flavors, warm hospitality, and genuine
-              connections. Drawing inspiration from the rich tapestry of Dutch
-              cuisine and global culinary traditions, our menu showcases a
-              harmonious blend of time-honored recipes and innovative
-              creations.
-            </p>
-          </div>
-        </div>
+      </section>
 
+      {/* Our Mission section */}
+      <section className="mission-section">
+        <div className="mission-item">
+          <img src={missionImage} alt="Our Mission" className="mission-image" />
+          <div className="mission-text">
+            <h2>Our Mission</h2>
+            <p>Description of your mission goes here...</p>
+          </div>
+        </div>
+      </section>
 
-        <div className="section">
-          <div className="chef-content">
-            <h2 className="chef-title">Executive Chef</h2>
-            <p className="chef-name">Mr. Thoangsa Chai</p>
-            <p className="chef-text">
-            At Foody-Moody, we are passionate about crafting
-              unforgettable dining experiences that tantalize the taste buds
-              and nourish the soul.Drawing inspiration from the rich tapestry of Dutch
-              cuisine and global culinary traditions, our menu showcases a
-              harmonious blend of time-honored recipes and innovative.Our journey began with a simple yet profound vision: to create a
-              haven where food lovers from all walks of life can come together
-              to indulge in exquisite flavors, warm hospitality, and genuine
-              connections.
-            </p>
+      {/* Our Vision section */}
+      <section className="vision-section">
+        <div className="vision-item">
+          <div className="vision-text">
+            <h2>Our Vision</h2>
+            <p>Description of your vision goes here...</p>
           </div>
-          <div className="chef-image-container">
-            <img
-              src="https://wallpapercave.com/wp/wp7120924.jpg"
-              alt=""
-              className="chef-image"
-            />
+          <img src={visionImage} alt="Our Vision" className="vision-image" />
+        </div>
+      </section>
+
+      {/* Our Service section */}
+      <section className="service-section">
+        <div className="service-item">
+          <img src={serviceImage} alt="Our Service" className="service-image" />
+          <div className="service-text">
+            <h2>Our Service</h2>
+            <p>Description of your services goes here...</p>
           </div>
         </div>
-        <div className="form-section">
-          <h2>Leave us a Comment</h2>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="name">Name:</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div>
-              <label htmlFor="email">Email:</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div>
-              <label htmlFor="comment">Comment:</label>
-              <textarea id="comment" name="comment" required></textarea>
-            </div>
-            <div>
-              <label htmlFor="address">Address:</label>
-              <input type="text" id="address" name="address" required />
-            </div>
-            <div>
-            <div>
-          <label>
-            <input
-              type="checkbox"
-              checked={isChecked}
-              onChange={handleCheckboxChange}
-            />
-            I am not a robot
-          </label>
-        </div>
-              <button type="submit">Submit</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </>
+      </section>
+
+      {/* Contact Us section */}
+      <section className="contact-section">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or inquiries, please fill out the form below:</p>
+        {/* Contact form */}
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div className="form-group">
+            <label htmlFor="service">What Service you Want?</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service</option>
+              <option value="Reservation">Reservation</option>
+              <option value="Catering">Catering</option>
+              <option value="Delivery">Delivery</option>
+            </select>
+          </div>
+          {/* Google reCAPTCHA */}
+          <div className="recaptcha-container">
+            {/* Add Google reCAPTCHA here */}
+          </div>
+          {/* Submit button */}
+          <button type="submit" className="submit-button">Submit</button>
+        </form>
+      </section>
+    </div>
   );
 }
+
+export default AboutUs;

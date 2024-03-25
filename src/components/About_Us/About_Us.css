@@ -1,170 +1,156 @@
-/* Hero Section */
-.hero-section {
-    position: relative;
-    height: 60vh;
-    width: 100%;
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.hero-image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+.about-us-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Hero section */
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 90%;
-    text-align: right;
-}
-
-.gradient-text {
-    -webkit-animation: name 10s infinite;
-}
-
-@keyframes name {
-    0% {
-        color: rgb(255, 255, 255);
-    }
-
-    25% {
-        color: rgb(138, 18, 18);
-    }
-
-    50% {
-        color: rgb(255, 217, 0);
-    }
-
-    75% {
-        color: rgb(4, 121, 39);
-    }
-
-    100% {
-        color: rgb(156, 91, 99);
-    }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
 }
 
 .hero-title {
-    font-size: 5rem;
-    margin-bottom: 1rem;
-    color: #fff;
-    font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-.hero-description {
-    color: #fff;
+/* Mission, Vision, Service sections */
+.mission-section,
+.vision-section,
+.service-section {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Main Content */
-.main-content {
-    width: 100%;
-    margin: auto;
+.mission-item,
+.vision-item,
+.service-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 2rem;
+.mission-image,
+.vision-image,
+.service-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px;
 }
 
-.reverse {
-    flex-direction: row-reverse;
+.mission-text,
+.vision-text,
+.service-text {
+  flex-grow: 1;
 }
 
-.story-content,
-.manager-content,
-.chef-content {
-    flex: 1;
-    margin: 20px;
+.mission-text h2,
+.vision-text h2,
+.service-text h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.story-title,
-.manager-title,
-.chef-title {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    font-family: 'Playfair Display', serif;
+/* Contact section */
+.contact-section {
+  margin-top: 40px;
+  text-align: center;
 }
 
-.story-image-container,
-.manager-image-container,
-.chef-image-container {
-    flex: 1;
-    margin: 20px;
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.story-image,
-.manager-image,
-.chef-image {
-    width: 90%;
-    object-fit: cover;
-
-}
-
-.manager-name,
-.chef-name {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.manager-text,
-.chef-text {
-    text-align: left;
-}
-
-/* Form Section */
-.form-section {
-    width: 30%; /* Adjust this width as needed */
-    margin-left: auto;
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-field {
-    margin-bottom: 1rem;
+.form-group {
+  margin-bottom: 20px;
 }
 
 label {
-    font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 input,
+select,
 textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.recaptcha-container {
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .mission-image,
+  .vision-image,
+  .service-image {
     width: 100%;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    border: 1px solid #ccc;
-}
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 
-button {
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: #000000;
-    border: none;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    margin-top: 15px;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-.captcha {
-    /* Style your captcha container here */
-    background-color: #f2f2f2;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-}
-
-.form-section {
-    width: 95%; /* Adjust this width as needed */
-    margin: 20px;
+  .mission-text,
+  .vision-text,
+  .service-text {
+    text-align: center;
+  }
 }
