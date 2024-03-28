@@ -1,0 +1,21 @@
+.head{
+    font-size: 65px;
+    font-family: Open Sans;
+    font-weight: 600;
+    margin-top: -10px !important;
+}
+
+.tagline{
+    font-size: 21px;
+    font-family: Lato, sans-serif;
+    font-weight: 500;
+}
+
+.home-to-about{
+    color: #c19556;
+    font-size: 60px;
+    /* position: absolute; */
+
+    margin-top: -60px;
+}
+
