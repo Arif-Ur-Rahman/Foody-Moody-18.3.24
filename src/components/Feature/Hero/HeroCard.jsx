@@ -16,6 +16,7 @@ import sports6 from "../../../assets/food1.png";
 import sports7 from "../../../assets/biryani3.png";
 import sports8 from "../../../assets/biryani2.png";
 import poll1 from "../../../assets/biryani.png";
+import { Link } from "react-router-dom";
 
 const HeroSlider = () => {
   // Define image arrays for each stack
@@ -70,7 +71,7 @@ const HeroSlider = () => {
       {/* Stack 1 */}
       <div className="stack stack-rotate1 position-relative">
         <div className="slide-card">
-          <a href="/">
+          <Link to="/Cashback">
             <div className="image">
               <img
                 src={stack1Images[currentStack1Index]}
@@ -78,14 +79,14 @@ const HeroSlider = () => {
                 className="fade-image"
               />
             </div>
-          </a>
+          </Link>
         </div>
       </div>
 
       {/* Stack 2 */}
       <div className="stack stack-rotate2 position-relative">
         <div className="slide-card">
-          <a href="/">
+          <Link to="/Gift">
             <div className="image">
               <img
                 src={stack2Images[currentStack2Index]}
@@ -93,14 +94,14 @@ const HeroSlider = () => {
                 className="fade-image"
               />
             </div>
-          </a>
+          </Link>
         </div>
       </div>
 
       {/* Stack 3 */}
       <div className="stack stack-rotate3 position-relative">
         <div className="slide-card">
-          <a href="/">
+          <Link to="/SevenOrder">
             <div className="image">
               <img
                 src={stack3Images[currentStack3Index]}
@@ -108,7 +109,7 @@ const HeroSlider = () => {
                 className="fade-image"
               />
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
