@@ -10,6 +10,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+    margin-bottom: 6rem;
 }
 .headline-list-item{
     background-color: rgb(99, 86, 11);
