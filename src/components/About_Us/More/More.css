@@ -11,12 +11,16 @@
     margin: 2% 8%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50%, 50%));
+    max-width: 100%;
 }
 .about-img-container{
     width: 100%;
+    max-width: 100%; /* Add this line */
+    overflow: hidden;
 }
 .about-image{
-    width: 95%;
+    width: 100%;
+    height: auto;
 }
 .about-text-container{
     width: 100%;
@@ -27,17 +31,17 @@
 }
 .about-title{
     font-size: 1rem;
-    color: var(#FFC727);
+    color: var#FFC727;
     margin-bottom: -2rem;
 }
 .about-main-heading{
-    font-size: 3rem;
-    color: var(#222020);
+    font-size: 2rem;
+    color: #222020;
 }
 .about-sub-heading{
-    font-size: var(#625f5f);
+    font-size: 20;
     margin-bottom: 0;
-    margin-right: 8rem;
+    margin-right: 0rem;
 }
 .about-btns{
     display: flex;
