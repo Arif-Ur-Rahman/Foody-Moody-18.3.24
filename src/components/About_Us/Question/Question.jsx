@@ -1,6 +1,6 @@
 import React from 'react';
 import './Question.css';
-import '../../About_Us/responsive.css';
+
 
 const Question = () => {
     return (
@@ -11,9 +11,7 @@ const Question = () => {
                         Have Question In Mind?
                     </h1>
                     <p className="question-sub-heading">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Maiores quod eaque unde ipsum error sapiente quae 
-                        quidem atque.
+                        If you any question, Please feel free to ask. We are open 24/7.
                     </p>
                 </div>
                 <div className="question-item">
