@@ -178,6 +178,13 @@
 
 /* About Section */
 @media (max-width:768px) {
+  .about-img-container {
+    margin-top: 2rem; /* Adjust margin as needed */
+}
+.about-image {
+  width: 100%;
+  margin-top: 0; /* Remove the margin-top */
+}
   .about-container{
     margin: 2%;
     display: grid;
@@ -259,13 +266,14 @@
   }
 }
 @media (min-width: 1200px) {
-  .about-site-img{
+  .about-site-img {
     display: block;
-    height: 130px;
+    height: auto; /* Change height to auto */
+    width: 100px; /* Set a specific width */
     position: absolute;
     margin-left: 94%;
     margin-top: 31%;
-  }
+}
 }
 /* End About Section */
 
