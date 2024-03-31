@@ -1,6 +1,5 @@
 import React from 'react';
 import './Headline.css';
-import '../responsive.css';
 
 const Headline = () => {
     return (
