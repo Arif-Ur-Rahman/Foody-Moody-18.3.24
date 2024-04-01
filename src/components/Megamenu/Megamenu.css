@@ -4,9 +4,9 @@
   top: 100%; /* Position the Megamenu below the Navbar item */
   left: -400px;
   width: 1000px; /* Adjust the width as needed */
-  background: linear-gradient(to right, #183d57, #da07af, rgb(0, 0, 0), rgb(86, 72, 72)); /* Initial gradient */
+  background: linear-gradient(to right, #82c4f3, hsl(129, 61%, 78%), rgb(137, 208, 230),rgb(174, 167, 245)); /* Initial gradient */
   background-size: 400% auto;
-  animation: gradientAnimation 30s infinite; /* Change every 10 seconds, ad
+  animation: gradientAnimation 30s infinite;
   border: 1px solid #092074; /* Add border */
   border-radius: 10px; /* Add border radius for rounded corners */
   padding: 10px; /* Add padding for content */
@@ -30,12 +30,12 @@
     height: auto
 }
 .menu-item name {
-  color: #000000;
+  color: #ffffff;
 }
   .megamenu h3 {
     margin: 0 0 10px; /* Add margin below the heading */
     font-size: 16px; /* Adjust font size */
-    color: #000000; /* Set text color */
+    color: #ffffff; /* Set text color */
   }
   
   .megamenu ul {
@@ -74,5 +74,12 @@
     height: 100px; /* Adjust the height as needed */
     border-radius: 50%; /* Make the image round */
     margin-bottom: 10px; /* Add some space between the image and text */
+  }
+  .menu-item-inner p {
+    color: white;
+  }
+
+  .menu-item-inner h4 {
+    color: red;
   }
   
