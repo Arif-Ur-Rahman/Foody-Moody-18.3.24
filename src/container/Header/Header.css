@@ -173,3 +173,60 @@
         transform: rotate(360deg);
     }
 }
+
+@media screen and (max-width: 767px) {
+    /* CSS rules for mobile devices */
+    .container {
+        font-size: 3px;
+        width: 43em; /* Adjust the width as needed */
+        height: 60em; /* Adjust the height as needed */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    /* / CSS rules for tablets / */
+    .container {
+        font-size: 6px;
+        width: 43em; /* Adjust the width as needed */
+        height: 60em; /* Adjust the height as needed */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    /* / CSS rules for desktops / */
+    .container {
+        font-size: 6px;
+        width: 60em;
+        height: 60em;
+        position: absolute;
+        top: 50%;
+        left: 57%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        font-size: 5px;
+        width: 60em; /* Adjust the width as needed */
+        height: 60em; /* Adjust the height as needed */
+        position: absolute;
+        top: 44%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+      }
+}
+
+
+
+
+
