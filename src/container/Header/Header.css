@@ -177,7 +177,7 @@
 @media screen and (max-width: 767px) {
     /* CSS rules for mobile devices */
     .container {
-        font-size: 3px;
+        font-size: 3.6px;
         width: 43em; /* Adjust the width as needed */
         height: 60em; /* Adjust the height as needed */
         position: absolute;
@@ -191,7 +191,7 @@
 @media screen and (min-width: 768px) and (max-width: 991px) {
     /* / CSS rules for tablets / */
     .container {
-        font-size: 6px;
+        font-size: 7px;
         width: 43em; /* Adjust the width as needed */
         height: 60em; /* Adjust the height as needed */
         position: absolute;
@@ -204,7 +204,7 @@
 @media screen and (min-width: 992px) and (max-width: 1199px) {
     /* / CSS rules for desktops / */
     .container {
-        font-size: 6px;
+        font-size: 9px;
         width: 60em;
         height: 60em;
         position: absolute;
