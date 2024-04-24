@@ -5,7 +5,26 @@
     position: absolute;
     inset: 0;
 }
-
+.custom__button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #202320;
+    border: 2px solid #1b1c1b;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    width: auto;
+  }
+  
+  .custom__button:hover {
+    background: #981905;
+    border-color: #5e0404;
+  }
 .app__aboutus-overlay img{
     width: 391px;
     height: 415px;
