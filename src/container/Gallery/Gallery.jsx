@@ -1,5 +1,6 @@
 import React from 'react';
 import { BsInstagram, BsArrowLeftShort, BsArrowRightShort } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 import { SubHeading } from '../../components';
 import { images } from '../../constants';
@@ -23,8 +24,13 @@ const Gallery = () => {
       <div className="app__gallery-content">
         <SubHeading title="Instagram" />
         <h1 className="headtext__cormorant">Photo Gallery</h1>
-        <p className="p__opensans" style={{ color: '#AAAAAA', marginTop: '2rem' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Volutpat mattis ipsum turpis elit elit scelerisque egestas mu.</p>
+        <p className="p__opensans" style={{ color: '#AAAAAA', marginTop: '2rem' }}>At Foody Moody, 
+        our menu is a symphony of flavors, carefully curated to delight discerning palates. 
+        From classic favorites to daring culinary creations, there's something for every appetite.</p>
+
+        <Link to="/menu">
         <button type="button" className="custom__button">View More</button>
+        </Link>
       </div>
       <div className="app__gallery-images">
         <div className="app__gallery-images_container" ref={scrollRef}>

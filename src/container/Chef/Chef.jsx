@@ -20,13 +20,10 @@ const Chef = () => (
           <img src= {images.quote} alt="quote" />
 
           <p className="p__opensans">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio, quos, iusto est nulla sequi dignissimos laboriosam corporis fugiat ducimus nesciunt culpa. Culpa, accusantium autem dolorem quisquam 
-            reiciendis cupiditate eligendi nisi.
-          </p>
-
-          <p className="p__opensans">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, aperiam.
-
+          At Foody Moody, we believe in crafting culinary experiences that tantalize the senses 
+          and nourish the soul. Our chef's passion for fresh, locally sourced ingredients and 
+          innovative techniques drives every dish. We're committed to fostering a 
+          dining atmosphere where guests feel welcomed, valued, and inspired with each bite.
           </p>
         </div>
 
