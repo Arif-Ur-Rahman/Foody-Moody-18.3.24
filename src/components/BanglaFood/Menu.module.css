@@ -10,7 +10,7 @@
 
 .foodCard {
   position: relative;
-  width: calc(33.33% - 20px);
+  width: calc(33.33% - 90px);
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
