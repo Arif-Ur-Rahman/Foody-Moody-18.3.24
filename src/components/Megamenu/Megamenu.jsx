@@ -1,70 +1,533 @@
-import React from 'react';
-import './Megamenu.css';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPizzaSlice, faBreadSlice, faFish, faCarrot, faCookie } from '@fortawesome/free-solid-svg-icons'; // Import different icons
-import pizzaImage from '../../assets/biryani.png';
-import breadImage from '../../assets/biryani2.png';
-import fishImage from '../../assets/biryani3.png';
-import carrotImage from '../../assets/biryani2.png';
-import cookieImage from '../../assets/biryani3.png';
+import React, { useState } from "react";
+import "./Megamenu.css";
+import { Link } from "react-router-dom";
+import pizzaImage from "../../assets/biryani.png";
+import breadImage from "../../assets/biryani2.png";
+import fishImage from "../../assets/biryani3.png";
+import carrotImage from "../../assets/biryani2.png";
+import cookieImage from "../../assets/biryani3.png";
+import SubMegaCategory from "./SubMegaCategory";
 
 const Megamenu = () => {
+  const [hovering, setHovering] = useState(null);
+
   const menuItems = [
     {
-      icon: faPizzaSlice,
-      name: 'Bangladesh Items',
-      description: 'Delicious Bangladeshi cuisine',
-      image: pizzaImage
+      name: "Asian Menu",
+      description: "Delicious Bangladeshi cuisine",
     },
     {
-      icon: faBreadSlice,
-      name: 'Indian Items',
-      description: 'Authentic Indian flavors',
-      image: breadImage
+      name: "African Menu",
+      description: "Authentic Indian flavors",
     },
     {
-      icon: faFish,
-      name: 'Bangladesh Items',
-      description: 'Fresh seafood from Bangladesh',
-      image: fishImage
+      name: "Australian menu",
+      description: "Fresh seafood from Bangladesh",
     },
     {
-      icon: faCarrot,
-      name: 'Netherland Items',
-      description: 'Healthy Dutch delicacies',
-      image: carrotImage
+      name: "Russian menu",
+      description: "Healthy Dutch delicacies",
     },
     {
-      icon: faCookie,
-      name: 'African Items',
-      description: 'Traditional African treats',
-      image: cookieImage
+      name: "American menu",
+      description: "Traditional African treats",
     },
     {
-      icon: faPizzaSlice,
-      name: 'Japanese Items',
-      description: 'Exquisite Japanese dishes',
-      image: pizzaImage
-    }
+      name: "European menu",
+      description: "Exquisite Japanese dishes",
+    },
   ];
 
   return (
     <div className="megamenu">
-      <h3>Food Menu</h3>
       <div className="row">
-        {menuItems.map((item, index) => (
-          <div className="menu-item" key={index}>
-            <div className="menu-item-inner">
-              <img src={item.image} alt={item.name} />
-              <h4>{item.name}</h4>
-              <p>{item.description}</p>
+        <div className="main_category">
+          {menuItems.map((item, index) => (
+            <div
+              className="mega-menu-item"
+              id={`item-active-${index}`}
+              onMouseEnter={() => setHovering(index)}
+            >
+              <Link className="link-main-category" to="/">
+                <h4>{item.name}</h4>
+                <p>{item.description}</p>
+              </Link>
+            </div>
+          ))}
+        </div>
+        {hovering === 0 ? (
+          <div className="mega-sub-main-menu">
+            <div>
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Japanese Sushi Platter"
+                subTitle="Assorted nigiri and maki sushi featuring fresh fish like salmon"
+              />
+              <SubMegaCategory
+                img={breadImage}
+                title="Vietnamese Pho"
+                subTitle="Fragrant beef noodle soup with thinly sliced beef"
+              />
+              <SubMegaCategory
+                img={fishImage}
+                title="Indian Butter Chicken"
+                subTitle="Tender pieces of chicken cooked in a creamy tomato-based sauce flavored with butter"
+              />
+              <SubMegaCategory
+                img={carrotImage}
+                title="Thai Green Curry"
+                subTitle="A spicy and aromatic Thai curry made with green curry paste"
+              />
+              <SubMegaCategory
+                img={cookieImage}
+                title="Chinese Mapo Tofu"
+                subTitle="Spicy and numbing tofu dish cooked with minced pork"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Korean Bibimbap"
+                subTitle="A Korean mixed rice dish topped with assorted vegetables"
+              />
+            </div>
+            <div>
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Indonesian Nasi Goreng"
+                subTitle="Flavorful Indonesian fried rice cooked with shrimp, chicken"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Malaysian Roti Canai with Curry"
+                subTitle="Flaky and crispy Malaysian flatbread served"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Filipino Adobo"
+                subTitle="A classic Filipino dish featuring chicken or pork simmered"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Singaporean Chili Crab"
+                subTitle="Succulent crab cooked in a spicy and tangy tomato-based chili "
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
             </div>
           </div>
-        ))}
+        ) : hovering === 1 ? (
+          <div className="mega-sub-main-menu">
+            <div>
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={breadImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={fishImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={carrotImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={cookieImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+            </div>
+            <div>
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+            </div>
+          </div>
+        ) : hovering === 2 ? (
+          <div className="mega-sub-main-menu">
+            <div>
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={breadImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={fishImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={carrotImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={cookieImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+            </div>
+            <div>
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+            </div>
+          </div>
+        ) : hovering === 3 ? (
+          <div className="mega-sub-main-menu">
+            <div>
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={breadImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={fishImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={carrotImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={cookieImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+            </div>
+            <div>
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+            </div>
+          </div>
+        ) : hovering === 4 ? (
+          <div className="mega-sub-main-menu">
+            <div>
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={breadImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={fishImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={carrotImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={cookieImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+            </div>
+            <div>
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Roast"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+            </div>
+          </div>
+        ) : hovering === 4 ? (
+          <div className="mega-sub-main-menu">
+            <div>
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={breadImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={fishImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={carrotImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={cookieImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+            </div>
+            <div>
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+            </div>
+          </div>
+        ) : (
+          <div className="mega-sub-main-menu">
+            <div>
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Japanese Sushi Platter"
+                subTitle="Assorted nigiri and maki sushi featuring fresh fish like salmon"
+              />
+              <SubMegaCategory
+                img={breadImage}
+                title="Vietnamese Pho"
+                subTitle="Fragrant beef noodle soup with thinly sliced beef"
+              />
+              <SubMegaCategory
+                img={fishImage}
+                title="Indian Butter Chicken"
+                subTitle="Tender pieces of chicken cooked in a creamy tomato-based sauce flavored with butter"
+              />
+              <SubMegaCategory
+                img={carrotImage}
+                title="Thai Green Curry"
+                subTitle="A spicy and aromatic Thai curry made with green curry paste"
+              />
+              <SubMegaCategory
+                img={cookieImage}
+                title="Chinese Mapo Tofu"
+                subTitle="Spicy and numbing tofu dish cooked with minced pork"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Korean Bibimbap"
+                subTitle="A Korean mixed rice dish topped with assorted vegetables"
+              />
+            </div>
+            <div>
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Indonesian Nasi Goreng"
+                subTitle="Flavorful Indonesian fried rice cooked with shrimp, chicken"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Malaysian Roti Canai with Curry"
+                subTitle="Flaky and crispy Malaysian flatbread served"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Filipino Adobo"
+                subTitle="A classic Filipino dish featuring chicken or pork simmered"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="Singaporean Chili Crab"
+                subTitle="Succulent crab cooked in a spicy and tangy tomato-based chili "
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+              <SubMegaCategory
+                img={pizzaImage}
+                title="biryani"
+                subTitle="Lorem ipsum dolor sit consectetur"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
-}
+};
 
 export default Megamenu;
