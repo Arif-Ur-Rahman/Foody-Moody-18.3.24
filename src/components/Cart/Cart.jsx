@@ -117,6 +117,10 @@ function Cart() {
           </table>
           <Link to="/payment" className="proceed-to-pay">Proceed to Pay</Link>
         </div>
+        {/* Order More Button */}
+        <div className="order-more">
+          <Link to="/menu" className="order-more-btn">Click Here To Order More</Link>
+        </div>
       </div>
       <Footer />
     </>
