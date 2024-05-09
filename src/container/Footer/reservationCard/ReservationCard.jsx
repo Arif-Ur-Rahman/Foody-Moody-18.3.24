@@ -12,13 +12,18 @@ const ReservationCard = () => {
                 <div className="res-date">
                   <div className="res-date-item">
                     <div className="res-date-text">
-                      <p>Tuesday:</p>
+                      <p>Monday To Friday:</p>
                     </div>
                     <div className="res-date-dot">
-                      .......................................
+                      ........
                     </div>
                   </div>
                 </div>
+                
+                <div className="clearfix"></div>
+              </div>
+              <div className="res-date-time-item">
+                
                 <div className="res-time">
                   <div className="res-time-item">
                     <p>7AM - 9PM</p>
@@ -26,115 +31,7 @@ const ReservationCard = () => {
                 </div>
                 <div className="clearfix"></div>
               </div>
-              <div className="res-date-time-item">
-                <div className="res-date">
-                  <div className="res-date-item">
-                    <div className="res-date-text">
-                      <p>Wednesday:</p>
-                    </div>
-                    <div className="res-date-dot">
-                      .......................................
-                    </div>
-                  </div>
-                </div>
-                <div className="res-time">
-                  <div className="res-time-item">
-                    <p>7AM - 9PM</p>
-                  </div>
-                </div>
-                <div className="clearfix"></div>
               </div>
-              <div className="res-date-time-item">
-                <div className="res-date">
-                  <div className="res-date-item">
-                    <div className="res-date-text">
-                      <p>Thursday:</p>
-                    </div>
-                    <div className="res-date-dot">
-                      .......................................
-                    </div>
-                  </div>
-                </div>
-                <div className="res-time">
-                  <div className="res-time-item">
-                    <p>7AM - 9PM</p>
-                  </div>
-                </div>
-                <div className="clearfix"></div>
-              </div>
-              <div className="res-date-time-item">
-                <div className="res-date">
-                  <div className="res-date-item">
-                    <div className="res-date-text">
-                      <p>Friday:</p>
-                    </div>
-                    <div className="res-date-dot">
-                      .......................................
-                    </div>
-                  </div>
-                </div>
-                <div className="res-time">
-                  <div className="res-time-item">
-                    <p>7AM - 9PM</p>
-                  </div>
-                </div>
-                <div className="clearfix"></div>
-              </div>
-              <div className="res-date-time-item">
-                <div className="res-date">
-                  <div className="res-date-item">
-                    <div className="res-date-text">
-                      <p>Saturday:</p>
-                    </div>
-                    <div className="res-date-dot">
-                      .......................................
-                    </div>
-                  </div>
-                </div>
-                <div className="res-time">
-                  <div className="res-time-item">
-                    <p>7AM - 9PM</p>
-                  </div>
-                </div>
-                <div className="clearfix"></div>
-              </div>
-              <div className="res-date-time-item">
-                <div className="res-date">
-                  <div className="res-date-item">
-                    <div className="res-date-text">
-                      <p>Sunday:</p>
-                    </div>
-                    <div className="res-date-dot">
-                      .......................................
-                    </div>
-                  </div>
-                </div>
-                <div className="res-time">
-                  <div className="res-time-item">
-                    <p>7AM - 9PM</p>
-                  </div>
-                </div>
-                <div className="clearfix"></div>
-              </div>
-              <div className="res-date-time-item">
-                <div className="res-date">
-                  <div className="res-date-item">
-                    <div className="res-date-text">
-                      <p>Monday:</p>
-                    </div>
-                    <div className="res-date-dot">
-                      .......................................
-                    </div>
-                  </div>
-                </div>
-                <div className="res-time">
-                  <div className="res-time-item">
-                    <p>Close</p>
-                  </div>
-                </div>
-                <div className="clearfix"></div>
-              </div>
-            </div>
             <h3 className="res-title">Reservation Numbers</h3>
             <p className="res-number">(617)-276-8031</p>
           </div>
