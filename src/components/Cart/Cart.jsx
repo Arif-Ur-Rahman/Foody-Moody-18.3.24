@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Navbar from "../../components/Navbar/Navbar";
-import Footer from "../../container/Footer/Footer"
+import Footer from "../../container/Footer/Footer";
 import "./Cart.css";
 import { FaTrash } from "react-icons/fa";
 import { CartContext } from "../../context/rootContext";
@@ -27,8 +27,13 @@ function Cart() {
   const calculateTotalPrice = () => {
     let totalPrice = 0;
     cart.forEach((item) => {
-      console.log('Item:', item);
-      if (typeof item.newPrice === 'number' && typeof item.quantity === 'number' && !isNaN(item.newPrice) && !isNaN(item.quantity)) {
+      console.log("Item:", item);
+      if (
+        typeof item.newPrice === "number" &&
+        typeof item.quantity === "number" &&
+        !isNaN(item.newPrice) &&
+        !isNaN(item.quantity)
+      ) {
         totalPrice += item.newPrice * item.quantity;
       }
     });
@@ -63,7 +68,7 @@ function Cart() {
                     <tr key={index}>
                       <td>{index + 1}</td>
                       <td>
-                        <img src={item.image} alt="Food Image" />
+                        <img src={item.image} alt="Foods" />
                       </td>
                       <td>{item.title}</td>
                       <td>
@@ -115,11 +120,15 @@ function Cart() {
               </tr>
             </tbody>
           </table>
-          <Link to="/payment" className="proceed-to-pay">Proceed to Pay</Link>
+          <Link to="/payment" className="proceed-to-pay">
+            Proceed to Pay
+          </Link>
         </div>
         {/* Order More Button */}
         <div className="order-more">
-          <Link to="/menu" className="order-more-btn">Click Here To Order More</Link>
+          <Link to="/menu" className="order-more-btn">
+            Click Here To Order More
+          </Link>
         </div>
       </div>
       <Footer />
