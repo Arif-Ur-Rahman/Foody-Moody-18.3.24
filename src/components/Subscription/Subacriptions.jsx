@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
-import Navbar from '../Navbar/Navbar';
-import { Footer } from '../../container';
-import './Subacriptions.css';
-import { AiOutlineClose } from 'react-icons/ai'; // Import the close icon from react-icons
-import ReCAPTCHA from 'react-google-recaptcha'; // Import ReCAPTCHA component
+import React, { useState } from "react";
+import Navbar from "../Navbar/Navbar";
+import { Footer } from "../../container";
+import "./Subacriptions.css";
+import { AiOutlineClose } from "react-icons/ai"; // Import the close icon from react-icons
+import ReCAPTCHA from "react-google-recaptcha"; // Import ReCAPTCHA component
 
 const Subscriptions = () => {
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    contact: '',
-    address: ''
+    name: "",
+    email: "",
+    contact: "",
+    address: "",
   });
-  const [selectedPlan, setSelectedPlan] = useState('');
+  const [selectedPlan, setSelectedPlan] = useState("");
   const [planPrice, setPlanPrice] = useState(0);
-  const [recaptchaToken, setRecaptchaToken] = useState('');
+  const [recaptchaToken, setRecaptchaToken] = useState("");
 
   const handleSubscribeClick = (plan, price) => {
     setSelectedPlan(plan);
@@ -31,7 +31,7 @@ const Subscriptions = () => {
     const { name, value } = event.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -42,23 +42,23 @@ const Subscriptions = () => {
   const handleSubmitForm = (event) => {
     event.preventDefault();
     // Form submission logic here, including sending data to server or API
-    console.log('Form data:', formData);
-    console.log('Selected Plan:', selectedPlan);
-    console.log('Plan Price:', planPrice);
-    console.log('ReCAPTCHA Token:', recaptchaToken);
+    console.log("Form data:", formData);
+    console.log("Selected Plan:", selectedPlan);
+    console.log("Plan Price:", planPrice);
+    console.log("ReCAPTCHA Token:", recaptchaToken);
     // Reset form and state after submission
     setFormData({
-      name: '',
-      email: '',
-      contact: '',
-      address: ''
+      name: "",
+      email: "",
+      contact: "",
+      address: "",
     });
-    setSelectedPlan('');
+    setSelectedPlan("");
     setPlanPrice(0);
-    setRecaptchaToken('');
+    setRecaptchaToken("");
     setShowForm(false);
 
-    alert('Thanks for subscribing! We will get back to you soon.');
+    alert("Thanks for subscribing! We will get back to you soon.");
   };
 
   return (
@@ -72,19 +72,29 @@ const Subscriptions = () => {
           <div className="pricing pricing-theme">
             <div className="pricing-item">
               <h3 className="pricing-title">Basic</h3>
-              <div className="pricing-price"><span className="pricing-currency">$</span>9.90</div>
+              <div className="pricing-price">
+                <span className="pricing-currency">$</span>9.90
+              </div>
               <p className="pricing-sentence">Become Our Regular Client</p>
               <ul className="pricing-feature-list">
                 <li className="pricing-feature">Order Anytime</li>
                 <li className="pricing-feature">Multiple Food Order</li>
                 <li className="pricing-feature">Food-Order for Occasion</li>
               </ul>
-              <a className="pricing-action" onClick={() => handleSubscribeClick('Basic', 9.90)}>Subscribe</a>
+              <a
+                href="/"
+                className="pricing-action"
+                onClick={() => handleSubscribeClick("Basic", 9.9)}
+              >
+                Subscribe
+              </a>
             </div>
-            
+
             <div className="pricing-item">
               <h3 className="pricing-title">Standard</h3>
-              <div className="pricing-price"><span className="pricing-currency">$</span>29.90</div>
+              <div className="pricing-price">
+                <span className="pricing-currency">$</span>29.90
+              </div>
               <p className="pricing-sentence">Become Our Standard Client</p>
               <ul className="pricing-feature-list">
                 <li className="pricing-feature">Order Anytime</li>
@@ -93,15 +103,23 @@ const Subscriptions = () => {
                 <li className="pricing-feature">Birthday/Anniversary Gift</li>
                 <li className="pricing-feature">7 Days Order Bonus</li>
               </ul>
-              <a className="pricing-action" onClick={() => handleSubscribeClick('Standard', 29.90)}>Subscribe</a>
+              <a
+                href="/"
+                className="pricing-action"
+                onClick={() => handleSubscribeClick("Standard", 29.9)}
+              >
+                Subscribe
+              </a>
             </div>
-            
+
             <div className="pricing-item">
               <h3 className="pricing-title">Premium</h3>
-              <div className="pricing-price"><span className="pricing-currency">$</span>59.90</div>
+              <div className="pricing-price">
+                <span className="pricing-currency">$</span>59.90
+              </div>
               <p className="pricing-sentence">Gigantic business solution</p>
               <ul className="pricing-feature-list">
-              <li className="pricing-feature">Order Anytime</li>
+                <li className="pricing-feature">Order Anytime</li>
                 <li className="pricing-feature">Multiple Food Order</li>
                 <li className="pricing-feature">Food-Order for Occasion</li>
                 <li className="pricing-feature">Birthday/Anniversary Gift</li>
@@ -109,9 +127,14 @@ const Subscriptions = () => {
                 <li className="pricing-feature">Food of The Day</li>
                 <li className="pricing-feature">Chef-At-Home Service</li>
               </ul>
-              <a className="pricing-action" onClick={() => handleSubscribeClick('Premium', 59.90)}>Subscribe</a>
+              <a
+                href="/"
+                className="pricing-action"
+                onClick={() => handleSubscribeClick("Premium", 59.9)}
+              >
+                Subscribe
+              </a>
             </div>
-            
           </div>
         </section>
       </div>
@@ -125,16 +148,43 @@ const Subscriptions = () => {
             <p>Plan Price: ${planPrice}</p>
             <form onSubmit={handleSubmitForm}>
               <label htmlFor="name">Name:</label>
-              <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
-              
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+
               <label htmlFor="email">Email:</label>
-              <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-              
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+
               <label htmlFor="contact">Contact:</label>
-              <input type="tel" id="contact" name="contact" value={formData.contact} onChange={handleChange} required />
+              <input
+                type="tel"
+                id="contact"
+                name="contact"
+                value={formData.contact}
+                onChange={handleChange}
+                required
+              />
 
               <label htmlFor="address">Address:</label>
-              <textarea id="address" name="address" value={formData.address} onChange={handleChange} required />
+              <textarea
+                id="address"
+                name="address"
+                value={formData.address}
+                onChange={handleChange}
+                required
+              />
 
               <ReCAPTCHA
                 sitekey="6LeZAKApAAAAADIDKMBS_b0nhKqsNWLQB04fgP9a"
@@ -149,6 +199,6 @@ const Subscriptions = () => {
       <Footer />
     </>
   );
-}
+};
 
 export default Subscriptions;

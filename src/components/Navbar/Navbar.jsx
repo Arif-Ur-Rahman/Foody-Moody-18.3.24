@@ -2,38 +2,30 @@ import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
-import { FaShoppingCart, FaSearch, FaUser, faTrash } from "react-icons/fa";
+import { FaShoppingCart, FaSearch, FaUser, FaTrash } from "react-icons/fa";
 import images from "../../constants/images";
 import { Link } from "react-router-dom";
 import Megamenu from "../Megamenu/Megamenu";
 import SubscriptionMegamenu from "../SubscriptionMegamenu/SubscriptionMegamenu";
-import { Dropdown } from "react-bootstrap";
 import { CartContext } from "../../context/rootContext";
 
 const Navbar = () => {
-  const { cart, removeFromCart } = useContext(CartContext);
+  const { cart, setCart } = useContext(CartContext);
+  const handleDeleteItem = (id) => {
+    const updatedCartItems = cart.filter((item) => item.id !== id);
+    setCart(updatedCartItems);
+  };
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showSubscriptionMegamenu, setShowSubscriptionMegamenu] =
     useState(false);
   const [showCartModal, setShowCartModal] = useState(false);
   const [showSearchField, setShowSearchField] = useState(false);
-  const [showUserDropdown, setShowUserDropdown] = useState(false);
-  const [cartItems, setCartItems] = useState([]); // Store cart items here
 
-  // Function to add items to the cart
-  const addToCart = (item) => {
-    setCartItems([...cartItems, item]);
-  };
   const calculateTotal = (cart) => {
     return cart.reduce((total, item) => total + item.newPrice, 0).toFixed(2);
   };
 
   // Function to remove items from the cart
-  const handleRemoveItem = (itemId) => {
-    const updatedCart = cartItems.filter((item) => item.id !== itemId);
-    setCartItems(updatedCart);
-    removeFromCart(itemId);
-  };
 
   return (
     <nav className="app__navbar">
@@ -82,10 +74,10 @@ const Navbar = () => {
               <div className="cart-modal">
                 <div>
                   {cart && Array.isArray(cart) && cart.length > 0 ? (
-                    cart.map((item) => (
+                    cart.map((item, index) => (
                       <div key={item.id} className="cart-item">
                         <div className="item-sn">
-                          <span>{item.id}</span>
+                          <span>{index + 1}</span>
                         </div>
                         <div className="cart-item-image">
                           <img src={item.image} alt={item.title} />
@@ -96,12 +88,8 @@ const Navbar = () => {
                         <div className="cart-item-price">
                           <span>{item.newPrice}</span>
                         </div>
-                        <div
-                          className="cart-item-remove"
-                          onClick={() => handleRemoveItem(item.id)}
-                        >
-                          <span><faTrash /></span>
-                          
+                        <div className="cart-item-remove">
+                          <FaTrash onClick={() => handleDeleteItem(item.id)} />
                         </div>
                       </div>
                     ))
