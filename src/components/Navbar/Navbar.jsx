@@ -88,8 +88,11 @@ const Navbar = () => {
                         <div className="cart-item-price">
                           <span>{item.newPrice}</span>
                         </div>
-                        <div className="cart-item-remove">
-                          <FaTrash onClick={() => handleDeleteItem(item.id)} />
+                        <div
+                          className="cart-item-remove"
+                          onClick={() => handleDeleteItem(item.id)}
+                        >
+                          <FaTrash />
                         </div>
                       </div>
                     ))
