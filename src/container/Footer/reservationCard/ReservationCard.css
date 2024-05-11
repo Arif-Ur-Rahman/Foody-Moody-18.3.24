@@ -55,6 +55,9 @@
   float: left;
   overflow: hidden;
 }
+.ft-fixed-area .reservation-wrap .res-date p {
+  font-size: 12px;
+}
 .ft-fixed-area .reservation-wrap .res-date .res-date-item {
   display: table;
   width: 100%;
