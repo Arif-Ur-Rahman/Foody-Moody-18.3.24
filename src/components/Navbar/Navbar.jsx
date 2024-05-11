@@ -25,8 +25,6 @@ const Navbar = () => {
     return cart.reduce((total, item) => total + item.newPrice, 0).toFixed(2);
   };
 
-  // Function to remove items from the cart
-
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
@@ -90,7 +88,7 @@ const Navbar = () => {
                         </div>
                         <div
                           className="cart-item-remove"
-                          onClick={() => handleDeleteItem(item.id)}
+                          onClick={() => handleDeleteItem(index)}
                         >
                           <FaTrash />
                         </div>
