@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Megamenu.css";
 import { Link } from "react-router-dom";
 import pizzaImage from "../../assets/biryani.png";
+import Kacchibiriany from "../../assets/biryani.png";
 import breadImage from "../../assets/biryani2.png";
 import fishImage from "../../assets/biryani3.png";
 import carrotImage from "../../assets/biryani2.png";
@@ -13,8 +14,8 @@ const Megamenu = () => {
 
   const menuItems = [
     {
-      name: "Asian Menu",
-      description: "Delicious Bangladeshi cuisine",
+      name: "BD Food Menu",
+      description: "Delicious Bangladeshi Items",
     },
     {
       name: "African Menu",
@@ -59,67 +60,54 @@ const Megamenu = () => {
           <div className="mega-sub-main-menu">
             <div>
               <SubMegaCategory
-                img={pizzaImage}
-                title="Japanese Sushi Platter"
-                subTitle="Assorted nigiri and maki sushi featuring fresh fish like salmon"
+                img={Kacchibiriany}
+                title="Kacchi Biriyani"
+                subTitle="Special Spicy Mutton With Bashmoti Rice"
               />
               <SubMegaCategory
                 img={breadImage}
-                title="Vietnamese Pho"
-                subTitle="Fragrant beef noodle soup with thinly sliced beef"
+                title="Morog Polau"
+                subTitle="Chicken Roast With Special Rice With Kebab & Borhani"
               />
               <SubMegaCategory
                 img={fishImage}
-                title="Indian Butter Chicken"
-                subTitle="Tender pieces of chicken cooked in a creamy tomato-based sauce flavored with butter"
+                title="Beef Khichuri"
+                subTitle="Tender pieces of Beef cooked in a creamy tomato-based sauce flavored with Hot Khichuri"
               />
               <SubMegaCategory
                 img={carrotImage}
-                title="Thai Green Curry"
+                title="Beef Tehari"
                 subTitle="A spicy and aromatic Thai curry made with green curry paste"
               />
               <SubMegaCategory
                 img={cookieImage}
-                title="Chinese Mapo Tofu"
+                title="Chicken Jhaal Fry"
                 subTitle="Spicy and numbing tofu dish cooked with minced pork"
               />
               <SubMegaCategory
                 img={pizzaImage}
-                title="Korean Bibimbap"
+                title="Illish & Egg"
                 subTitle="A Korean mixed rice dish topped with assorted vegetables"
               />
             </div>
             <div>
               <SubMegaCategory
                 img={pizzaImage}
-                title="Indonesian Nasi Goreng"
-                subTitle="Flavorful Indonesian fried rice cooked with shrimp, chicken"
+                title="Fish Fry & Rice"
+                subTitle="Flavorful Bangladeshi fried rice cooked with Fish."
               />
               <SubMegaCategory
                 img={pizzaImage}
-                title="Malaysian Roti Canai with Curry"
-                subTitle="Flaky and crispy Malaysian flatbread served"
+                title="Sheek Kebab With Naan"
+                subTitle="A classic Bangladeshi dish featuring Kebab & Naan"
               />
               <SubMegaCategory
                 img={pizzaImage}
-                title="Filipino Adobo"
-                subTitle="A classic Filipino dish featuring chicken or pork simmered"
-              />
-              <SubMegaCategory
-                img={pizzaImage}
-                title="Singaporean Chili Crab"
+                title="Mangso Parata"
                 subTitle="Succulent crab cooked in a spicy and tangy tomato-based chili "
               />
-              <SubMegaCategory
-                img={pizzaImage}
-                title="biryani"
-                subTitle="Lorem ipsum dolor sit consectetur"
-              />
-              <SubMegaCategory
-                img={pizzaImage}
-                title="biryani"
-                subTitle="Lorem ipsum dolor sit consectetur"
-              />
+              
+              
             </div>
           </div>
         ) : hovering === 1 ? (
