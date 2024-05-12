@@ -18,23 +18,23 @@ const Megamenu = () => {
       description: "Delicious Bangladeshi Items",
     },
     {
-      name: "African Menu",
+      name: "Indian Menu",
       description: "Authentic Indian flavors",
     },
     {
-      name: "Australian menu",
+      name: "Netharland Food Items",
       description: "Fresh seafood from Bangladesh",
     },
     {
-      name: "Russian menu",
-      description: "Healthy Dutch delicacies",
+      name: "Japanese Food Menu",
+      description: "Healthy Japanese Delicious Items",
     },
     {
-      name: "American menu",
+      name: "Thai Food",
       description: "Traditional African treats",
     },
     {
-      name: "European menu",
+      name: "Chinese Items",
       description: "Exquisite Japanese dishes",
     },
   ];
@@ -49,7 +49,7 @@ const Megamenu = () => {
               id={`item-active-${index}`}
               onMouseEnter={() => setHovering(index)}
             >
-              <Link className="link-main-category" to="/">
+              <Link className="link-main-category" to="/BanglaFood">
                 <h4>{item.name}</h4>
                 <p>{item.description}</p>
               </Link>
@@ -115,65 +115,55 @@ const Megamenu = () => {
             <div>
               <SubMegaCategory
                 img={pizzaImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title= "Butter Chicken"
+                subTitle= "A classic Indian dish with tender chicken cooked in a rich buttery tomato sauce."
               />
               <SubMegaCategory
                 img={breadImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Naan"
+                subTitle="Soft and fluffy Indian bread baked in a tandoor oven, perfect for dipping in curry."
               />
               <SubMegaCategory
                 img={fishImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
-              />
+                title= "Fish Curry"
+      subTitle= "Spicy and flavorful curry made with fish and traditional Indian spices."
+    />
               <SubMegaCategory
                 img={carrotImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
-              />
+                title= "Gajar Halwa"
+      subTitle= "Sweet and decadent carrot pudding, a popular Indian dessert."
+    />
               <SubMegaCategory
                 img={cookieImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
-              />
+                title= "Kaju Katli"
+      subTitle= "Delicious cashew nut fudge, a beloved Indian sweet treat."
+    />
               <SubMegaCategory
                 img={pizzaImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
-              />
+                title= "Samosa"
+      subTitle= "Crispy pastry filled with spiced potatoes and peas, a favorite Indian snack."
+    />
             </div>
             <div>
               <SubMegaCategory
                 img={pizzaImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Matar Paneer"
+                subTitle="Here is one more dish from the neverending list of Indian Cuisines."
               />
               <SubMegaCategory
                 img={pizzaImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Tandoori Chicken"
+                subTitle="Tandoori chicken is a famous North Indian cuisine"
               />
               <SubMegaCategory
                 img={pizzaImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Masala Dosa"
+                subTitle="This conventional south Indian dish is mainstream"
               />
               <SubMegaCategory
                 img={pizzaImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
-              />
-              <SubMegaCategory
-                img={pizzaImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
-              />
-              <SubMegaCategory
-                img={pizzaImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Hyderabadi Biriyani"
+                subTitle="Hyderabadi biriyani is a finger-licking South Indian preparation"
               />
             </div>
           </div>
@@ -182,33 +172,33 @@ const Megamenu = () => {
             <div>
               <SubMegaCategory
                 img={pizzaImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Stroopwafel"
+                subTitle="A traditional Dutch treat consisting of thin waffle cookies filled with caramel syrup."
               />
               <SubMegaCategory
                 img={breadImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Bitterballen"
+                subTitle="Deep-fried meat-based snack, usually filled with beef ragout, popular in the Netherlands."
               />
               <SubMegaCategory
                 img={fishImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Poffertjes"
+                subTitle="Small, fluffy pancakes often served with powdered sugar and butter, a Dutch favorite."
               />
               <SubMegaCategory
                 img={carrotImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Erwtensoep"
+                subTitle="Thick pea soup with pork, celery, carrots, and leeks, a hearty winter dish in the Netherlands."
               />
               <SubMegaCategory
                 img={cookieImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Kroket"
+                subTitle="Deep-fried roll filled with a meat ragout, a popular snack in Dutch cuisine."
               />
               <SubMegaCategory
                 img={pizzaImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Haring"
+                subTitle="Raw herring fillet typically served with onions and pickles, a traditional Dutch delicacy."
               />
             </div>
             <div>
@@ -217,31 +207,7 @@ const Megamenu = () => {
                 title="Roast"
                 subTitle="Lorem ipsum dolor sit consectetur"
               />
-              <SubMegaCategory
-                img={pizzaImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
-              />
-              <SubMegaCategory
-                img={pizzaImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
-              />
-              <SubMegaCategory
-                img={pizzaImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
-              />
-              <SubMegaCategory
-                img={pizzaImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
-              />
-              <SubMegaCategory
-                img={pizzaImage}
-                title="Roast"
-                subTitle="Lorem ipsum dolor sit consectetur"
-              />
+              
             </div>
           </div>
         ) : hovering === 3 ? (
@@ -249,66 +215,52 @@ const Megamenu = () => {
             <div>
               <SubMegaCategory
                 img={pizzaImage}
-                title="biryani"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Sushi"
+                subTitle="Assorted bite-sized rolls of vinegared rice topped with fresh seafood or vegetables."
               />
               <SubMegaCategory
                 img={breadImage}
-                title="biryani"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Ramen"
+                subTitle="Japanese noodle soup dish with wheat noodles"
               />
               <SubMegaCategory
                 img={fishImage}
-                title="biryani"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Okonomiyaki"
+                subTitle="Savory Japanese pancake containing a variety of ingredients like cabbage"
               />
               <SubMegaCategory
                 img={carrotImage}
-                title="biryani"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Tempura"
+                subTitle="Lightly battered and deep-fried seafood or vegetables"
               />
               <SubMegaCategory
                 img={cookieImage}
-                title="biryani"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Matcha"
+                subTitle="Finely ground green tea powder, used to prepare traditional Japanese green tea."
               />
               <SubMegaCategory
                 img={pizzaImage}
-                title="biryani"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Mochi"
+                subTitle="Chewy rice cakes made from glutinous rice, often filled with sweet bean paste or ice cream."
               />
             </div>
             <div>
               <SubMegaCategory
                 img={pizzaImage}
-                title="biryani"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Takoyaki"
+                subTitle="Octopus-filled batter balls topped with savory sauce"
               />
               <SubMegaCategory
                 img={pizzaImage}
-                title="biryani"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Sashimi"
+                subTitle="Fresh slices of raw fish or seafood served without rice"
               />
               <SubMegaCategory
                 img={pizzaImage}
-                title="biryani"
-                subTitle="Lorem ipsum dolor sit consectetur"
+                title="Yakitori"
+                subTitle="Grilled skewers of chicken or other meats"
               />
-              <SubMegaCategory
-                img={pizzaImage}
-                title="biryani"
-                subTitle="Lorem ipsum dolor sit consectetur"
-              />
-              <SubMegaCategory
-                img={pizzaImage}
-                title="biryani"
-                subTitle="Lorem ipsum dolor sit consectetur"
-              />
-              <SubMegaCategory
-                img={pizzaImage}
-                title="biryani"
-                subTitle="Lorem ipsum dolor sit consectetur"
-              />
+              
             </div>
           </div>
         ) : hovering === 4 ? (
