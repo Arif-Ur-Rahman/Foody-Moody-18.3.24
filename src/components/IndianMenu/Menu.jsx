@@ -20,6 +20,7 @@ const products = [
     oldPrice: 280,
     newPrice: 220,
     ingredients: "Rice, Spicy Chicken, Borhani",
+    quantity: 1,
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ const products = [
     oldPrice: 20,
     newPrice: 18,
     ingredients: "Naan With Butter",
+    quantity: 1,
   },
   {
     id: 3,
@@ -36,6 +38,7 @@ const products = [
     oldPrice: 100,
     newPrice: 95,
     ingredients: "Gajar Halwa, Sweet and Testy",
+    quantity: 1,
   },
   {
     id: 4,
@@ -44,6 +47,7 @@ const products = [
     oldPrice: 300,
     newPrice: 270,
     ingredients: "Rice with Fish Curry",
+    quantity: 1,
   },
   {
     id: 5,
@@ -52,6 +56,7 @@ const products = [
     oldPrice: 20,
     newPrice: 18,
     ingredients: "Rice, Chicken, Vegetables",
+    quantity: 1,
   },
   {
     id: 6,
@@ -60,6 +65,7 @@ const products = [
     oldPrice: 20,
     newPrice: 18,
     ingredients: "Rice, Chicken, Vegetables",
+    quantity: 1,
   },
   {
     id: 7,
@@ -68,6 +74,7 @@ const products = [
     oldPrice: 20,
     newPrice: 18,
     ingredients: "Rice, Chicken, Vegetables",
+    quantity: 1,
   },
   {
     id: 8,
@@ -76,6 +83,7 @@ const products = [
     oldPrice: 20,
     newPrice: 18,
     ingredients: "Rice, Chicken, Vegetables",
+    quantity: 1,
   },
   {
     id: 9,
@@ -84,6 +92,7 @@ const products = [
     oldPrice: 20,
     newPrice: 18,
     ingredients: "Rice, Chicken, Vegetables",
+    quantity: 1,
   },
 ];
 

@@ -15,6 +15,7 @@ const products = [
     title: "Delicious Food 1",
     oldPrice: 20,
     newPrice: 18,
+    quantity:1,
     ingredients: "Rice, Chicken, Vegetables",
   },
   {
@@ -23,6 +24,7 @@ const products = [
     title: "Delicious Food 2",
     oldPrice: 20,
     newPrice: 18,
+    quantity:1,
     ingredients: "Rice, Chicken, Vegetables",
   },
   {
@@ -31,6 +33,7 @@ const products = [
     title: "Delicious Food 3",
     oldPrice: 20,
     newPrice: 18,
+    quantity:1,
     ingredients: "Rice, Chicken, Vegetables",
   },
   {
@@ -39,6 +42,7 @@ const products = [
     title: "Delicious Food 4",
     oldPrice: 20,
     newPrice: 18,
+    quantity:1,
     ingredients: "Rice, Chicken, Vegetables",
   },
   {
@@ -47,6 +51,7 @@ const products = [
     title: "Delicious Food 5",
     oldPrice: 20,
     newPrice: 18,
+    quantity:1,
     ingredients: "Rice, Chicken, Vegetables",
   },
   {
@@ -55,6 +60,7 @@ const products = [
     title: "Delicious Food 6",
     oldPrice: 20,
     newPrice: 18,
+    quantity:1,
     ingredients: "Rice, Chicken, Vegetables",
   },
   {
@@ -63,6 +69,7 @@ const products = [
     title: "Delicious Food 7",
     oldPrice: 20,
     newPrice: 18,
+    quantity:1,
     ingredients: "Rice, Chicken, Vegetables",
   },
   {
@@ -71,6 +78,7 @@ const products = [
     title: "Delicious Food 8",
     oldPrice: 20,
     newPrice: 18,
+    quantity:1,
     ingredients: "Rice, Chicken, Vegetables",
   },
   {
@@ -79,6 +87,7 @@ const products = [
     title: "Delicious Food 9",
     oldPrice: 20,
     newPrice: 18,
+    quantity:1,
     ingredients: "Rice, Chicken, Vegetables",
   },
 ];
