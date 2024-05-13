@@ -2,7 +2,13 @@ import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
-import { FaShoppingCart, FaSearch, FaUser, FaTrash } from "react-icons/fa";
+import {
+  FaShoppingCart,
+  FaSearch,
+  FaUser,
+  FaChevronLeft, FaChevronRight,
+  FaEye,
+} from "react-icons/fa";
 import images from "../../constants/images";
 import { Link } from "react-router-dom";
 import Megamenu from "../Megamenu/Megamenu";
@@ -11,10 +17,6 @@ import { CartContext } from "../../context/rootContext";
 
 const Navbar = () => {
   const { cart, setCart } = useContext(CartContext);
-  const handleDeleteItem = (id) => {
-    const updatedCartItems = cart.filter((item) => item.id !== id);
-    setCart(updatedCartItems);
-  };
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showSubscriptionMegamenu, setShowSubscriptionMegamenu] =
     useState(false);
@@ -22,7 +24,16 @@ const Navbar = () => {
   const [showSearchField, setShowSearchField] = useState(false);
 
   const calculateTotal = (cart) => {
-    return cart.reduce((total, item) => total + item.newPrice, 0).toFixed(2);
+    return cart
+      .reduce((total, item) => total + item.newPrice * item.quantity, 0)
+      .toFixed(2);
+  };
+
+  const handleQuantityChange = (itemId, newQuantity) => {
+    const updatedCart = cart.map((item) =>
+      item.id === itemId ? { ...item, quantity: newQuantity } : item
+    );
+    setCart(updatedCart);
   };
 
   return (
@@ -67,6 +78,8 @@ const Navbar = () => {
           <div className="cart-icon">
             <FaShoppingCart color="white" fontSize={"25px"} />
           </div>
+
+
           {showCartModal && (
             <div className="cart-modal-container">
               <div className="cart-modal">
@@ -74,23 +87,39 @@ const Navbar = () => {
                   {cart && Array.isArray(cart) && cart.length > 0 ? (
                     cart.map((item, index) => (
                       <div key={item.id} className="cart-item">
-                        <div className="item-sn">
-                          <span>{index + 1}</span>
-                        </div>
                         <div className="cart-item-image">
                           <img src={item.image} alt={item.title} />
                         </div>
                         <div className="cart-item-details">
                           <span>{item.title}</span>
                         </div>
+                        <div className="cart-item-quantity">
+                <span
+                  className="quantity-control"
+                  onClick={() =>
+                    handleQuantityChange(item.id, item.quantity - 1)
+                  }
+                  disabled={item.quantity <= 1}
+                >
+                  -
+                </span>
+                <span>{item.quantity}</span>
+                <span
+                  className="quantity-control"
+                  onClick={() =>
+                    handleQuantityChange(item.id, item.quantity + 1)
+                  }
+                >
+                  +
+                </span>
+              </div>
                         <div className="cart-item-price">
                           <span>{item.newPrice}</span>
                         </div>
-                        <div
-                          className="cart-item-remove"
-                          onClick={() => handleDeleteItem(index)}
-                        >
-                          <FaTrash />
+                        <div className="cart-item-remove">
+                          <Link to="/cart">
+                            <FaEye />
+                          </Link>
                         </div>
                       </div>
                     ))

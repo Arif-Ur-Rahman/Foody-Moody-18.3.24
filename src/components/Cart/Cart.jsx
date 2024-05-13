@@ -13,6 +13,7 @@ function Cart() {
     const updatedCartItems = cart.filter((item) => item.id !== id);
     setCart(updatedCartItems);
   };
+  
 
   const handleQuantityChange = (id, newQuantity) => {
     const updatedCartItems = cart.map((item) => {
@@ -27,7 +28,6 @@ function Cart() {
   const calculateTotalPrice = () => {
     let totalPrice = 0;
     cart.forEach((item) => {
-      console.log("Item:", item);
       if (
         typeof item.newPrice === "number" &&
         typeof item.quantity === "number" &&
