@@ -6,7 +6,8 @@ import {
   FaShoppingCart,
   FaSearch,
   FaUser,
-  FaChevronLeft, FaChevronRight,
+  FaChevronLeft,
+  FaChevronRight,
   FaEye,
 } from "react-icons/fa";
 import images from "../../constants/images";
@@ -79,9 +80,11 @@ const Navbar = () => {
             <FaShoppingCart color="white" fontSize={"25px"} />
           </div>
 
-
           {showCartModal && (
-            <div className="cart-modal-container">
+            <div className="cart-modal-container"
+            onClick={(e) => e.stopPropagation()}
+            >
+              
               <div className="cart-modal">
                 <div>
                   {cart && Array.isArray(cart) && cart.length > 0 ? (
@@ -94,25 +97,25 @@ const Navbar = () => {
                           <span>{item.title}</span>
                         </div>
                         <div className="cart-item-quantity">
-                <span
-                  className="quantity-control"
-                  onClick={() =>
-                    handleQuantityChange(item.id, item.quantity - 1)
-                  }
-                  disabled={item.quantity <= 1}
-                >
-                  -
-                </span>
-                <span>{item.quantity}</span>
-                <span
-                  className="quantity-control"
-                  onClick={() =>
-                    handleQuantityChange(item.id, item.quantity + 1)
-                  }
-                >
-                  +
-                </span>
-              </div>
+                          <span
+                            className="quantity-control"
+                            onClick={() =>
+                              handleQuantityChange(item.id, item.quantity - 1)
+                            }
+                            disabled={item.quantity <= 1}
+                          >
+                            -
+                          </span>
+                          <span>{item.quantity}</span>
+                          <span
+                            className="quantity-control"
+                            onClick={() =>
+                              handleQuantityChange(item.id, item.quantity + 1)
+                            }
+                          >
+                            +
+                          </span>
+                        </div>
                         <div className="cart-item-price">
                           <span>{item.newPrice}</span>
                         </div>
