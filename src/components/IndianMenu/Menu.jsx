@@ -101,26 +101,27 @@ function Menu() {
 
   // Function to add item to the cart
   const addToCart = (foodItem) => {
-    const existingItemIndex = cart.findIndex((item) => item.id === foodItem.id);
-  
-    if (existingItemIndex !== -1) {
-      // If item already exists in cart, update its quantity
-      const updatedCart = [...cart];
-      updatedCart[existingItemIndex].quantity += 1;
+    const existingItem = cart.find((item) => item.id === foodItem.id);
+
+    if (existingItem) {
+      // If item already exists in cart, increase quantity
+      const updatedCart = cart.map((item) =>
+        item.id === foodItem.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
       setCart(updatedCart);
     } else {
-      // If item is not in cart, add it with quantity 1
-      const updatedCart = [...cart, { ...foodItem }];
-      setCart(updatedCart);
+      // If item is not in cart, add with quantity 1
+      setCart([...cart, { ...foodItem, quantity: 1 }]);
     }
   };
+  
 
   return (
     <div className={styles.container}>
       <div className={styles.foodItems}>
         {products.map((data) => (
           <FoodCard
-            key= {data.id}
+            key={data.id}
             image={data?.image}
             title={data?.title}
             oldPrice={data?.oldPrice}

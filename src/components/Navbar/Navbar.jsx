@@ -2,14 +2,7 @@ import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
-import {
-  FaShoppingCart,
-  FaSearch,
-  FaUser,
-  FaChevronLeft,
-  FaChevronRight,
-  FaEye,
-} from "react-icons/fa";
+import { FaShoppingCart, FaSearch, FaUser, FaEye } from "react-icons/fa";
 import images from "../../constants/images";
 import { Link } from "react-router-dom";
 import Megamenu from "../Megamenu/Megamenu";
@@ -81,11 +74,11 @@ const Navbar = () => {
           </div>
 
           {showCartModal && (
-            <div className="cart-modal-container"
-            onClick={(e) => e.stopPropagation()}
+            <div
+              className="cart-modal-container"
+              onClick={() => setShowCartModal(false)}
             >
-              
-              <div className="cart-modal">
+              <div className="cart-modal" onClick={(e) => e.stopPropagation()}>
                 <div>
                   {cart && Array.isArray(cart) && cart.length > 0 ? (
                     cart.map((item, index) => (
