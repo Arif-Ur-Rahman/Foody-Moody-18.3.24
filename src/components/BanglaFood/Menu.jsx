@@ -97,7 +97,18 @@ function Menu() {
 
   // Function to add item to the cart
   const addToCart = (foodItem) => {
-    setCart([...cart, foodItem]);
+    const existingItemIndex = cart.findIndex((item) => item.id === foodItem.id);
+  
+    if (existingItemIndex !== -1) {
+      // If item already exists in cart, update its quantity
+      const updatedCart = [...cart];
+      updatedCart[existingItemIndex].quantity += 1;
+      setCart(updatedCart);
+    } else {
+      // If item is not in cart, add it with quantity 1
+      const updatedCart = [...cart, { ...foodItem }];
+      setCart(updatedCart);
+    }
   };
 
   return (
