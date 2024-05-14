@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../container/Footer/Footer";
 import "./Cart.css";
-import { FaTrash } from "react-icons/fa";
+import { FaTrash, FaChevronLeft, FaChevronRight } from "react-icons/fa"; // Import arrow icons
 import { CartContext } from "../../context/rootContext";
 import { Link } from "react-router-dom";
 
@@ -13,7 +13,6 @@ function Cart() {
     const updatedCartItems = cart.filter((item) => item.id !== id);
     setCart(updatedCartItems);
   };
-  
 
   const handleQuantityChange = (id, newQuantity) => {
     const updatedCartItems = cart.map((item) => {
@@ -62,48 +61,51 @@ function Cart() {
                 </tr>
               </thead>
               <tbody>
-                {cart.map((item, index) => {
-                  console.log("Item:", item); // Debugging statement
-                  return (
-                    <tr key={index}>
-                      <td>{index + 1}</td>
-                      <td>
-                        <img src={item.image} alt="Foods" />
-                      </td>
-                      <td>{item.title}</td>
-                      <td>
-                        ${item.newPrice ? item.newPrice.toFixed(2) : "N/A"}
-                      </td>{" "}
-                      {/* Add null check */}
-                      <td>
+                {cart.map((item, index) => (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>
+                      <img src={item.image} alt="Foods" />
+                    </td>
+                    <td>{item.title}</td>
+                    <td>${item.newPrice ? item.newPrice.toFixed(2) : "N/A"}</td>
+                    <td>
+                      <div className="quantity-control">
+                        <FaChevronLeft
+                          className="quantity-button"
+                          onClick={() =>
+                            handleQuantityChange(item.id, item.quantity - 1)
+                          }
+                        />
                         <input
                           type="number"
                           value={item.quantity || 1}
                           min={1}
                           onChange={(e) =>
-                            handleQuantityChange(
-                              item.id,
-                              parseInt(e.target.value)
-                            )
+                            handleQuantityChange(item.id, parseInt(e.target.value))
                           }
                         />
-                      </td>
-                      <td>
-                        $
-                        {item.newPrice && item.quantity
-                          ? (item.newPrice * item.quantity).toFixed(2)
-                          : item.newPrice}
-                      </td>
-                      {/* Add null checks */}
-                      <td>
-                        <FaTrash
-                          className="delete-icon"
-                          onClick={() => handleDeleteItem(item.id)}
+                        <FaChevronRight
+                          className="quantity-button"
+                          onClick={() =>
+                            handleQuantityChange(item.id, item.quantity + 1)
+                          }
                         />
-                      </td>
-                    </tr>
-                  );
-                })}
+                      </div>
+                    </td>
+                    <td>
+                      ${item.newPrice && item.quantity
+                        ? (item.newPrice * item.quantity).toFixed(2)
+                        : item.newPrice}
+                    </td>
+                    <td>
+                      <FaTrash
+                        className="delete-icon"
+                        onClick={() => handleDeleteItem(item.id)}
+                      />
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
