@@ -9,6 +9,17 @@ import carrotImage from "../../assets/biryani2.png";
 import cookieImage from "../../assets/biryani3.png";
 import SubMegaCategory from "./SubMegaCategory";
 
+// indian Menu
+import H_Biriyani from "../../assets/Food_Image/IndianFood/Hydarabadi.png";
+import C_Biriyani from "../../assets/Food_Image/IndianFood/ChickenBiriyani.png";
+import Fish from "../../assets/Food_Image/IndianFood/Fishcurry.png";
+import Kazu from "../../assets/Food_Image/IndianFood/Kajukatli.png";
+import dosa from "../../assets/Food_Image/IndianFood/dosa.png";
+import Halwa from "../../assets/Food_Image/IndianFood/gajarhalwa.png";
+import naan from "../../assets/Food_Image/IndianFood/naan.png";
+
+
+
 const Megamenu = () => {
   const [hovering, setHovering] = useState(null);
 
@@ -49,7 +60,7 @@ const Megamenu = () => {
               id={`item-active-${index}`}
               onMouseEnter={() => setHovering(index)}
             >
-              <Link className="link-main-category" to="/BanglaFood">
+              <Link className="link-main-category" to="/menu">
                 <h4>{item.name}</h4>
                 <p>{item.description}</p>
               </Link>
@@ -114,39 +125,39 @@ const Megamenu = () => {
           <div className="mega-sub-main-menu">
             <div>
               <SubMegaCategory
-                img={pizzaImage}
+                img={C_Biriyani}
                 title= "Butter Chicken"
                 subTitle= "A classic Indian dish with tender chicken cooked in a rich buttery tomato sauce."
               />
               <SubMegaCategory
-                img={breadImage}
+                img={naan}
                 title="Naan"
                 subTitle="Soft and fluffy Indian bread baked in a tandoor oven, perfect for dipping in curry."
               />
               <SubMegaCategory
-                img={fishImage}
+                img={Fish}
                 title= "Fish Curry"
       subTitle= "Spicy and flavorful curry made with fish and traditional Indian spices."
     />
               <SubMegaCategory
-                img={carrotImage}
+                img={Halwa}
                 title= "Gajar Halwa"
       subTitle= "Sweet and decadent carrot pudding, a popular Indian dessert."
     />
               <SubMegaCategory
-                img={cookieImage}
+                img={Kazu}
                 title= "Kaju Katli"
       subTitle= "Delicious cashew nut fudge, a beloved Indian sweet treat."
     />
               <SubMegaCategory
-                img={pizzaImage}
+                img={H_Biriyani}
                 title= "Samosa"
       subTitle= "Crispy pastry filled with spiced potatoes and peas, a favorite Indian snack."
     />
             </div>
             <div>
               <SubMegaCategory
-                img={pizzaImage}
+                img={dosa}
                 title="Matar Paneer"
                 subTitle="Here is one more dish from the neverending list of Indian Cuisines."
               />
