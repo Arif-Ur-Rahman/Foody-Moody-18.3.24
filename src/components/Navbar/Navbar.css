@@ -54,27 +54,31 @@
 }
 
 .cart-modal {
-  position: absolute;
+  position: fixed;
   right: 20px;
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: #a3ccf3;
+  border: 3px solid #e7e2e2;
   color: black;
-  top: 70px;
+  top: 100px;
   border-radius: 5px;
-  width: 370px;
+  width: 460px;
+  max-height: 80vh; /* Set maximum height to 80% of viewport height */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   z-index: 100;
-  overflow-y: auto;
+  overflow-y: auto; /* Enable vertical scrolling if needed */
 }
+
 .cart-modal a {
   background-color: rgb(219, 82, 9);
   color: white;
-  padding: 5px;
+  padding: 8px 12px; /* Increase padding for better button appearance */
   border-radius: 8px;
   float: right;
   font-size: 14px;
+  text-decoration: none;
 }
+
 .cart-icon {
   display: flex;
   align-items: center;
@@ -84,37 +88,47 @@
   margin-right: 5px;
 }
 
-.cart-toggle {
-  display: none; /* Hide the default toggle */
-}
-
-/* Adjust the badge position as needed */
-.badge {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-}
-
 .cart-item {
   display: flex;
   margin-bottom: 10px;
   align-items: center;
-  justify-content: center;
 }
+
 .cart-item-image {
   width: 80px;
+  height: 80px;
   margin-right: 10px;
 }
 
 .cart-item-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover; /* Ensure image fills the container */
+  border-radius: 5px; /* Add border radius to image */
 }
 
 .cart-item-details {
   flex: 1;
-  font-size: small;
 }
+
+.cart-item-details h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.cart-item-quantity span {
+  cursor: pointer;
+  padding: 3px 6px;
+  border: 1px solid #5f5e5e;
+  border-radius: 3px;
+}
+
 .cart-summary-total {
   margin-top: 20px;
   display: flex;
@@ -122,13 +136,11 @@
   font-weight: bold;
 }
 
-.cart-item-name {
-  font-weight: bold;
+.proceed-to-checkout {
+  margin-top: 20px;
+  text-align: right;
 }
 
-.cart-item-price {
-  color: #888;
-}
 
 .search-field {
   position: absolute;
@@ -142,6 +154,8 @@
 .cart-item-quantity {
   display: flex;
   align-items: center;
+  border: 1px solid #4e4e4e; /* Add border to quantity control section */
+  padding: 4px; /* Add padding to separate controls */
 }
 
 .cart-item-quantity button,
@@ -152,7 +166,7 @@
 }
 
 .cart-item-quantity button {
-  background-color: #ddd; /* Set background color for buttons */
+  background-color: #494949; /* Set background color for buttons */
   border: none;
   border-radius: 50%; /* Make buttons circular */
 }
