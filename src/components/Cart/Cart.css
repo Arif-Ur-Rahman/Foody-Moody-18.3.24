@@ -20,7 +20,7 @@
 
 .cart-table th,
 .cart-table td {
-  padding: 2px;
+  padding: 10px;
   text-align: left;
 }
 
@@ -38,11 +38,25 @@
   height: auto;
 }
 
-.cart-table input[type="number"] {
+.quantity-control {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-control input[type="number"] {
   width: 50px;
   padding: 6px;
-  border-radius: 3px;
   border: 1px solid #ddd;
+  border-radius: 3px;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.quantity-control .quantity-button {
+  cursor: pointer;
+  padding: 1px;
+  border: 1px solid #000000;
+  border-radius: 3px;
 }
 
 .delete-icon {
@@ -55,24 +69,29 @@
   font-size: 18px;
   color: #999;
 }
+
 .order-more {
   text-align: right;
   margin-right: 50px; /* Adjust as needed */
 }
-.proceed-to-pay{
+
+.proceed-to-pay {
   margin-top: 5px;
-  padding: 5px;
-  background-color: green;
-  color: white;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
   border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .order-more-btn {
   margin: 10px;
-  padding: 10px;
+  padding: 10px 20px;
   background-color: #f44336;
   border-radius: 5px;
-  color: white;
+  color: #fff;
+  text-decoration: none;
 }
 
 /* Responsive styles */
@@ -80,85 +99,4 @@
   .cart-container {
     padding: 10px;
   }
-}
-
-/* Suggestions and Summary */
-.suggestions-and-summary {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-}
-
-.suggestions,
-.summary {
-  flex: 0 0 48%;
-}
-
-.suggestions h2,
-.summary h2 {
-  color: #333;
-  margin-bottom: 15px;
-}
-
-.suggestions-table,
-.order-summary-table {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.suggestions-table table,
-.order-summary-table table {
-  width: 100%;
-}
-
-.suggestions-table th,
-.order-summary-table th,
-.suggestions-table td,
-.order-summary-table td {
-  padding: 10px;
-  text-align: left;
-}
-
-.suggestions-table th,
-.order-summary-table th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
-
-.suggestions-table td,
-.order-summary-table td {
-  border-top: 1px solid #ddd;
-}
-
-.suggestions-table button,
-.order-summary-table button {
-  padding: 8px 12px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.suggestions-table button:hover,
-.order-summary-table button:hover {
-  background-color: #45a049;
-}
-
-.order-summary-table td:last-child {
-  text-align: right;
-}
-
-.order-summary-table .checkout-btn {
-  padding: 10px 20px;
-  background-color: #f44336;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.order-summary-table .checkout-btn:hover {
-  background-color: #d32f2f;
 }
