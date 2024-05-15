@@ -110,7 +110,7 @@ const Navbar = () => {
                           </span>
                         </div>
                         <div className="cart-item-price">
-                          <span>{item.newPrice}</span>
+                          <span>{ item.newPrice * item.quantity }</span>
                         </div>
                         <div className="cart-item-remove">
                           <Link to="/cart">

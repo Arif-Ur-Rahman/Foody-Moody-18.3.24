@@ -61,14 +61,14 @@
   color: black;
   top: 100px;
   border-radius: 5px;
-  width: 320px;
+  width: 400px;
   max-height: 80vh; /* Set maximum height to 80% of viewport height */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   z-index: 100;
   overflow-y: scroll; /* Enable vertical scrolling if needed */
   height: 300px;
-  font-size: x-small;
+  font-size: small;
   scroll-behavior: smooth;
 
 }
@@ -104,8 +104,8 @@
 }
 
 .cart-item-image img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   object-fit: cover; /* Ensure image fills the container */
   border-radius: 5px; /* Add border radius to image */
   margin-top: 20px;
@@ -113,6 +113,7 @@
 
 .cart-item-details {
   flex: 1;
+  margin-right: 20px;
 }
 
 .cart-item-details h3 {
@@ -158,14 +159,13 @@
 .cart-item-quantity {
   display: flex;
   align-items: center;
-  border: 1px solid #4e4e4e; /* Add border to quantity control section */
-  padding: 4px; /* Add padding to separate controls */
+  margin-right: 20px;
 }
 
 .cart-item-quantity button,
 .cart-item-quantity span {
-  margin: 0 5px; /* Adjust margin for spacing */
-  padding: 5px; /* Add padding for button/icon */
+  margin: 0 2px; /* Adjust margin for spacing */
+  padding: 2px; /* Add padding for button/icon */
   cursor: pointer; /* Show pointer cursor on hover */
 }
 
@@ -176,7 +176,7 @@
 }
 
 .cart-item-quantity span {
-  font-size: 14px; /* Set font size for quantity number */
+  font-size: 10px; /* Set font size for quantity number */
 }
 
 .user-dropdown {
