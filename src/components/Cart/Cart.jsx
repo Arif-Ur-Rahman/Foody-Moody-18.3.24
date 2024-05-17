@@ -82,7 +82,10 @@ function Cart() {
                           value={item.quantity || 1}
                           min={1}
                           onChange={(e) =>
-                            handleQuantityChange(item.id, parseInt(e.target.value))
+                            handleQuantityChange(
+                              item.id,
+                              parseInt(e.target.value)
+                            )
                           }
                         />
                         <FaChevronRight
@@ -94,7 +97,8 @@ function Cart() {
                       </div>
                     </td>
                     <td>
-                      ${item.newPrice && item.quantity
+                      $
+                      {item.newPrice && item.quantity
                         ? (item.newPrice * item.quantity).toFixed(2)
                         : item.newPrice}
                     </td>

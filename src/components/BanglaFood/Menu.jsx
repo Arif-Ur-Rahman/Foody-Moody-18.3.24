@@ -130,6 +130,68 @@ function Menu() {
   );
 }
 
+// function FoodCard({
+//   image,
+//   title,
+//   oldPrice,
+//   newPrice,
+//   ingredients,
+//   addToCart,
+// }) {
+//   const [showModal, setShowModal] = useState(false);
+
+//   const toggleModal = () => {
+//     setShowModal(!showModal);
+//   };
+//   return (
+//     <div className={styles.foodCard}>
+//       <img src={image} alt="Food" className={styles.foodImage} />
+//       <div className={styles.details}>
+//         <h2 className={styles.title}>{title}</h2>
+//         <div className={styles.price}>
+//           <div className={`${styles.oldPriceCircle} ${styles.priceCircle}`}>
+//             <span className={styles.oldPrice}>${oldPrice}</span>
+//           </div>
+//           <div className={`${styles.newPriceCircle} ${styles.priceCircle}`}>
+//             <span className={`${styles.newPrice} ${styles.biggerPrice}`}>
+//               ${newPrice}
+//             </span>
+//           </div>
+//         </div>
+//         <div className={styles.ingredients}>
+//           <span>Main Ingredients: {ingredients}</span>
+//         </div>
+//         <div className={styles.icons}>
+//           <div className={styles.iconContainer} onClick={addToCart}>
+//             <FontAwesomeIcon icon={faCartPlus} className={styles.icon} />
+//           </div>
+//           <div className={styles.iconContainer} onClick={toggleModal}>
+//             <FontAwesomeIcon icon={faEye} className={styles.icon} />
+//           </div>
+//         </div>
+//       </div>
+//       {showModal && (
+//         <div className={styles.modal}>
+//           <div className={styles.modalContent}>
+//             <span onClick={toggleModal} className={styles.close}>
+//               &times;
+//             </span>
+//             <img src={image} alt="Food" className={styles.modalImage} />
+//             <h2>{title}</h2>
+//             <div>
+//               <span>Old Price: ${oldPrice}</span>
+//               <span>New Price: ${newPrice}</span>
+//             </div>
+//             <div>Main Ingredients: {ingredients}</div>
+//             <button onClick={addToCart}>Buy</button>
+//           </div>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
+
+
 function FoodCard({
   image,
   title,
@@ -143,6 +205,12 @@ function FoodCard({
   const toggleModal = () => {
     setShowModal(!showModal);
   };
+
+  const handleAddToCart = () => {
+    addToCart();
+    toggleModal(); 
+  };
+
   return (
     <div className={styles.foodCard}>
       <img src={image} alt="Food" className={styles.foodImage} />
@@ -162,7 +230,7 @@ function FoodCard({
           <span>Main Ingredients: {ingredients}</span>
         </div>
         <div className={styles.icons}>
-          <div className={styles.iconContainer} onClick={addToCart}>
+          <div className={styles.iconContainer} onClick={handleAddToCart}>
             <FontAwesomeIcon icon={faCartPlus} className={styles.icon} />
           </div>
           <div className={styles.iconContainer} onClick={toggleModal}>
