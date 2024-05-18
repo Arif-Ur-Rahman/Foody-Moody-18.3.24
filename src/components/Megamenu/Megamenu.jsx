@@ -17,8 +17,8 @@ import Kazu from "../../assets/Food_Image/IndianFood/Kajukatli.png";
 import dosa from "../../assets/Food_Image/IndianFood/dosa.png";
 import Halwa from "../../assets/Food_Image/IndianFood/gajarhalwa.png";
 import naan from "../../assets/Food_Image/IndianFood/naan.png";
-
-
+import flag1 from "../../assets/flag/Flag_of_Bangladesh.svg.png";
+import flag2 from "../../assets/flag/Flag_of_India.svg.png";
 
 const Megamenu = () => {
   const [hovering, setHovering] = useState(null);
@@ -27,26 +27,34 @@ const Megamenu = () => {
     {
       name: "BD Food Menu",
       description: "Delicious Bangladeshi Items",
+      icon: flag1,
+      link: "BanglaFood",
     },
     {
       name: "Indian Menu",
       description: "Authentic Indian flavors",
+      icon: flag2,
+      link: "indian-menu",
     },
     {
       name: "Netharland Food Items",
       description: "Fresh seafood from Bangladesh",
+      link: "indian-menu",
     },
     {
       name: "Japanese Food Menu",
       description: "Healthy Japanese Delicious Items",
+      link: "BanglaFood",
     },
     {
       name: "Thai Food",
       description: "Traditional African treats",
+      link: "indian-menu",
     },
     {
       name: "Chinese Items",
       description: "Exquisite Japanese dishes",
+      link: "BanglaFood",
     },
   ];
 
@@ -60,9 +68,14 @@ const Megamenu = () => {
               id={`item-active-${index}`}
               onMouseEnter={() => setHovering(index)}
             >
-              <Link className="link-main-category" to="/menu">
-                <h4>{item.name}</h4>
-                <p>{item.description}</p>
+              <Link className="link-main-category" to={`/${item.link}`}>
+                <div>
+                  <img className="flag-icon" src={item.icon} alt={item.title} />
+                </div>
+                <div>
+                  <h4>{item.name}</h4>
+                  <p>{item.description}</p>
+                </div>
               </Link>
             </div>
           ))}
@@ -117,8 +130,6 @@ const Megamenu = () => {
                 title="Mangso Parata"
                 subTitle="Succulent crab cooked in a spicy and tangy tomato-based chili "
               />
-              
-              
             </div>
           </div>
         ) : hovering === 1 ? (
@@ -126,8 +137,8 @@ const Megamenu = () => {
             <div>
               <SubMegaCategory
                 img={C_Biriyani}
-                title= "Butter Chicken"
-                subTitle= "A classic Indian dish with tender chicken cooked in a rich buttery tomato sauce."
+                title="Butter Chicken"
+                subTitle="A classic Indian dish with tender chicken cooked in a rich buttery tomato sauce."
               />
               <SubMegaCategory
                 img={naan}
@@ -136,24 +147,24 @@ const Megamenu = () => {
               />
               <SubMegaCategory
                 img={Fish}
-                title= "Fish Curry"
-      subTitle= "Spicy and flavorful curry made with fish and traditional Indian spices."
-    />
+                title="Fish Curry"
+                subTitle="Spicy and flavorful curry made with fish and traditional Indian spices."
+              />
               <SubMegaCategory
                 img={Halwa}
-                title= "Gajar Halwa"
-      subTitle= "Sweet and decadent carrot pudding, a popular Indian dessert."
-    />
+                title="Gajar Halwa"
+                subTitle="Sweet and decadent carrot pudding, a popular Indian dessert."
+              />
               <SubMegaCategory
                 img={Kazu}
-                title= "Kaju Katli"
-      subTitle= "Delicious cashew nut fudge, a beloved Indian sweet treat."
-    />
+                title="Kaju Katli"
+                subTitle="Delicious cashew nut fudge, a beloved Indian sweet treat."
+              />
               <SubMegaCategory
                 img={H_Biriyani}
-                title= "Samosa"
-      subTitle= "Crispy pastry filled with spiced potatoes and peas, a favorite Indian snack."
-    />
+                title="Samosa"
+                subTitle="Crispy pastry filled with spiced potatoes and peas, a favorite Indian snack."
+              />
             </div>
             <div>
               <SubMegaCategory
@@ -218,7 +229,6 @@ const Megamenu = () => {
                 title="Roast"
                 subTitle="Lorem ipsum dolor sit consectetur"
               />
-              
             </div>
           </div>
         ) : hovering === 3 ? (
@@ -271,7 +281,6 @@ const Megamenu = () => {
                 title="Yakitori"
                 subTitle="Grilled skewers of chicken or other meats"
               />
-              
             </div>
           </div>
         ) : hovering === 4 ? (
