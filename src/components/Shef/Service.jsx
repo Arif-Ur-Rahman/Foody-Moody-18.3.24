@@ -1,37 +1,38 @@
 import React from "react";
-import Img1 from "../../assets/Shef1.png";
-import Img2 from "../../assets/Shef2.png";
-import Img3 from "../../assets/Shef3.png";
+import Img1 from "../../assets/ChefServices/Waiter.png";
+import Img2 from "../../assets/ChefServices/Intruments.png";
+import Img3 from "../../assets/ChefServices/Shoping.png";
+import Img4 from "../../assets/ChefServices/Add-ons.png";
 // import StarRatings from "react-star-ratings";
 const ServicesData = [
   {
     id: 1,
     img: Img1,
-    name: "Mr. Shef 1",
+    name: "Waiter For Serving",
     description:
-      "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet.",
+      "You can take our waiter with our Expert Chef, for Serving food professionally.",
   },
   {
     id: 2,
     img: Img2,
-    name: "Mr. Shef 2",
+    name: "Cooking Staff",
     description:
-      "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
+      "We provide cooking staff & instruments with our Chef for carring with them at your home.",
   },
   {
     id: 3,
     img: Img3,
-    name: "Mr. Shef 3",
+    name: "Shopping Food Items",
     description:
-      "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
+      "We will provide cooking items at a very chip cost. Chef will Carry them at your home.",
   },
 
   {
     id: 4,
-    img: Img1,
-    name: "Mr. Shef 4",
+    img: Img4,
+    name: "Add-on Items",
     description:
-      "Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet",
+      "Add Some of our Ad-ons with your foods, with a very low cost!",
   },
   
 ];
@@ -47,8 +48,7 @@ const Services = () => {
             </p>
             <h1 className="mt-4 mb-4 text-3xl font-bold">Services</h1>
             <p className="text-xl text-gray-400">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Perspiciatis delectus architecto error nesciunt,
+              You can take our Chef At your Home including our following services:
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 md:gap-5 place-items-center mb-24 ">
