@@ -49,9 +49,9 @@ const Hero = () => {
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold">
                 Take Our {" "}
                 <span class="bg-clip-text text-transparent bg-gradient-to-b from-primary to-secondary">
-                  Chef At Home
+                  Chef & Services 
                 </span>{" "}
-                And Prepare Favourite Food!
+                At Home & Prepare Your Favourite Food!
               </h1>
               <div>
                 <button className="bg-gradient-to-r from-primary to-secondary hover:scale-105 duration-200 text-white py-2 px-4 rounded-full">
