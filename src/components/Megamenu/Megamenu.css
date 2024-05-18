@@ -42,6 +42,17 @@
 .mega-menu-item:hover {
   background-color: #eff3f9;
 }
+.link-main-category {
+  align-items: center;
+  display: flex;
+  gap: 5px;
+}
+.link-main-category .flag-icon {
+  height: 42px;
+  width: 50px;
+  padding: 5px;
+  margin-right: 5px;
+}
 .mega-menu-item .link-main-category h4 {
   font-weight: bold;
   font-size: 0.9rem;
