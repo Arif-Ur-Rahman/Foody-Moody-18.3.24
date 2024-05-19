@@ -17,8 +17,12 @@ import Kazu from "../../assets/Food_Image/IndianFood/Kajukatli.png";
 import dosa from "../../assets/Food_Image/IndianFood/dosa.png";
 import Halwa from "../../assets/Food_Image/IndianFood/gajarhalwa.png";
 import naan from "../../assets/Food_Image/IndianFood/naan.png";
-import flag1 from "../../assets/flag/Flag_of_Bangladesh.svg.png";
-import flag2 from "../../assets/flag/Flag_of_India.svg.png";
+import BD_Flag from "../../assets/flag/Flag_of_Bangladesh.svg.png";
+import Indian_Flag from "../../assets/flag/Flag_of_India.svg.png";
+import Netharlands_Flag from "../../assets/flag/Flag_of_the_Netherlands.svg.png";
+import Thailand_Flag from "../../assets/flag/Flag_of_Thailand.svg.png";
+import Chinese_Flag from "../../assets/flag/Flag_of_the_People's_Republic_of_China.svg.webp";
+import Japanese_Flag from "../../assets/flag/Flag_of_Japan.svg.png";
 
 const Megamenu = () => {
   const [hovering, setHovering] = useState(null);
@@ -27,34 +31,38 @@ const Megamenu = () => {
     {
       name: "BD Food Menu",
       description: "Delicious Bangladeshi Items",
-      icon: flag1,
+      icon: BD_Flag,
       link: "BanglaFood",
     },
     {
       name: "Indian Menu",
       description: "Authentic Indian flavors",
-      icon: flag2,
+      icon: Indian_Flag,
       link: "indian-menu",
     },
     {
       name: "Netharland Food Items",
       description: "Fresh seafood from Bangladesh",
       link: "indian-menu",
+      icon: Netharlands_Flag,
     },
     {
       name: "Japanese Food Menu",
       description: "Healthy Japanese Delicious Items",
       link: "BanglaFood",
+      icon: Japanese_Flag,
     },
     {
       name: "Thai Food",
       description: "Traditional African treats",
       link: "indian-menu",
+      icon: Thailand_Flag,
     },
     {
       name: "Chinese Items",
       description: "Exquisite Japanese dishes",
       link: "BanglaFood",
+      icon: Chinese_Flag,
     },
   ];
 
