@@ -70,7 +70,6 @@
   height: 300px;
   font-size: small;
   scroll-behavior: smooth;
-
 }
 
 .cart-modal a {
@@ -90,6 +89,18 @@
 
 .cart-icon > svg {
   margin-right: 5px;
+}
+.notification-icon-div {
+  margin-left: 0 !important;
+  color: #11ff42 !important;
+  position: relative;
+  font-size: 15px !important;
+  left: -12px;
+  top: -9px;
+  background-color: #3c3737;
+  border-radius: 50%;
+  padding: 0px 6px;
+  text-align: center;
 }
 
 .cart-item {
@@ -145,7 +156,6 @@
   margin-top: 20px;
   text-align: right;
 }
-
 
 .search-field {
   position: absolute;

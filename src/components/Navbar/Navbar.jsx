@@ -110,7 +110,7 @@ const Navbar = () => {
                           </span>
                         </div>
                         <div className="cart-item-price">
-                          <span>{ item.newPrice * item.quantity }</span>
+                          <span>{item.newPrice * item.quantity}</span>
                         </div>
                         <div className="cart-item-remove">
                           <Link to="/cart">
@@ -135,10 +135,11 @@ const Navbar = () => {
             </div>
           )}
         </div>
-        <div className="icon" onClick={() => setShowCartModal(!showCartModal)}>
-          <div className="cart-icon">
-            {cart && Array.isArray(cart) && cart.length > 0 ? cart.length : 0}
-          </div>
+        <div
+          className="icon notification-icon-div"
+          onClick={() => setShowCartModal(!showCartModal)}
+        >
+          {cart && Array.isArray(cart) && cart.length > 0 ? cart.length : 0}
         </div>
         <div
           className="icon"
