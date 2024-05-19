@@ -2,7 +2,7 @@ import React from "react";
 import Img1 from "../../assets/ChefServices/Waiter.png";
 import Img2 from "../../assets/ChefServices/Intruments.png";
 import Img3 from "../../assets/ChefServices/Shoping.png";
-import Img4 from "../../assets/ChefServices/Add-ons.png";
+import Img4 from "../../assets/ChefServices/Ad-ons.png";
 // import StarRatings from "react-star-ratings";
 const ServicesData = [
   {
@@ -62,7 +62,7 @@ const Services = () => {
                   <img
                     src={service.img}
                     alt=""
-                    className="max-w-[200px] block mx-auto transform -translate-y-14
+                    className="max-w-[250px] h-[220px] block mx-auto transform -translate-y-14
                   group-hover:scale-105 group-hover:rotate-6 duration-300"
                   />
                 </div>
