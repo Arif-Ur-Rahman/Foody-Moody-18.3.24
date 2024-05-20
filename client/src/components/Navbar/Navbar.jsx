@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Navbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
@@ -16,7 +16,13 @@ const Navbar = () => {
     useState(false);
   const [showCartModal, setShowCartModal] = useState(false);
   const [showSearchField, setShowSearchField] = useState(false);
-
+  useEffect(() => {
+    if (cart.length > 0) {
+      setShowCartModal(true);
+    } else {
+      setShowCartModal(false);
+    }
+  }, [cart]);
   const calculateTotal = (cart) => {
     return cart
       .reduce((total, item) => total + item.newPrice * item.quantity, 0)
