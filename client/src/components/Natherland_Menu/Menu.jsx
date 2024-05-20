@@ -14,7 +14,7 @@ import { CartContext } from "../../context/rootContext";
 
 const products = [
   {
-    id: 101,
+    id: 301,
     image: hydarabadibiriyani,
     title: "Hydarabadi Biriyani",
     oldPrice: 280,
@@ -23,7 +23,7 @@ const products = [
     quantity: 1,
   },
   {
-    id: 102,
+    id: 302,
     image: Naan,
     title: "Butter Naan",
     oldPrice: 20,
@@ -32,7 +32,7 @@ const products = [
     quantity: 1,
   },
   {
-    id: 103,
+    id: 303,
     image: halwa,
     title: "Gajar Halwa",
     oldPrice: 100,
@@ -41,7 +41,7 @@ const products = [
     quantity: 1,
   },
   {
-    id: 104,
+    id: 304,
     image: fish,
     title: "Fish Curry",
     oldPrice: 300,
@@ -50,7 +50,7 @@ const products = [
     quantity: 1,
   },
   {
-    id: 105,
+    id: 305,
     image: Kazu,
     title: "Kazu Katli",
     oldPrice: 20,
@@ -59,7 +59,7 @@ const products = [
     quantity: 1,
   },
   {
-    id: 106,
+    id: 306,
     image: Salad,
     title: "Fish Curry",
     oldPrice: 20,
@@ -68,7 +68,7 @@ const products = [
     quantity: 1,
   },
   {
-    id: 107,
+    id: 307,
     image: halwa,
     title: "Delicious Food 7",
     oldPrice: 20,
@@ -77,7 +77,7 @@ const products = [
     quantity: 1,
   },
   {
-    id: 108,
+    id: 8,
     image: Biriyani,
     title: "Delicious Food 8",
     oldPrice: 20,
@@ -86,7 +86,7 @@ const products = [
     quantity: 1,
   },
   {
-    id: 109,
+    id: 9,
     image: dosa,
     title: "Delicious Food 9",
     oldPrice: 20,

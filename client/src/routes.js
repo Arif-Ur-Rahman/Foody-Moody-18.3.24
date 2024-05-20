@@ -17,6 +17,7 @@ import Gift from "./components/Feature/Gift/Gift.jsx";
 import SevenOrder from "./components/Feature/SevenOrder/SevenOrder.jsx";
 import Deal from "./components/Deal/Deal.jsx";
 import SevenDay from "./components/SevenDay/SevenDay.jsx";
+import NetherlandsFood from "./components/Natherland_Menu/Netherlands.jsx"
 
 const router = createBrowserRouter([
     {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
     {
         path: "indian-Menu",
         element: <IndianFood />,
+    },
+    {
+        path: "Netherlands-Food",
+        element: <NetherlandsFood />,
     },
     {
         path: "BanglaFood",
