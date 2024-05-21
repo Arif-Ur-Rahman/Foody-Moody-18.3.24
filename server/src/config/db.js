@@ -1,16 +1,18 @@
+import { MongoDBurl } from "../secret.js";
 import mongoose from "mongoose";
-import { MongoDBurl } from "../secret";
 
-const connectDB = async (options = {}) => {
+// Function to connect to MongoDB
+const connectDB = async () => {
   try {
-    await mongoose.connect(MongoDBurl, options);
-    console.log("Successfully Connected DataBase");
-    mongoose.connection.on("err", (err) => {
-      console.error(`DataBase connection: ${err}`);
+    await mongoose.connect(MongoDBurl, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
-  } catch (err) {
-    console.log(err.toString());
+    console.log("Connected to MongoDB");
+  } catch (error) {
+    console.error("Error connecting to MongoDB:", error);
+    process.exit(1);
   }
 };
 
-module.exports = connectDB;
+export default connectDB;
