@@ -1,6 +1,6 @@
-const { Schema, model } = require("mongoose");
-const bcrypt = require("bcrypt");
-const { defProfile } = require("../secret"); // Import default profile image path
+import { Schema, model } from "mongoose";
+import bcrypt from "bcrypt";
+import { defProfile } from "../secret";
 
 // Email validation function
 var validateEmail = function (email) {
@@ -41,6 +41,7 @@ const usersSchema = new Schema(
     },
     password: {
       type: String,
+      required: [true, "password address is required"],
       minlength: [6, "Minimum length is 6 characters"],
       set: (v) => bcrypt.hashSync(v, bcrypt.genSaltSync(10)),
     },
@@ -75,8 +76,8 @@ const usersSchema = new Schema(
     },
     subscription: {
       type: String,
-      enum: ["normal", "basic", "premium"],
-      default: "normal",
+      enum: ["free", "basic", "premium"],
+      default: "free",
     },
   },
   { timestamps: true } // Automatically manage createdAt and updatedAt fields

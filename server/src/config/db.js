@@ -1,5 +1,6 @@
-const mongoose = require("mongoose");
-const { MongoDBurl } = require("../secret");
+import mongoose from "mongoose";
+import { MongoDBurl } from "../secret";
+
 const connectDB = async (options = {}) => {
   try {
     await mongoose.connect(MongoDBurl, options);
