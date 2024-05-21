@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 import bcrypt from "bcrypt";
-import { defProfile } from "../secret";
+import { defProfile } from "../secret.js"; // Ensure correct relative path and .js extension
 
 // Email validation function
 var validateEmail = function (email) {
@@ -41,7 +41,7 @@ const usersSchema = new Schema(
     },
     password: {
       type: String,
-      required: [true, "password address is required"],
+      required: [true, "Password is required"],
       minlength: [6, "Minimum length is 6 characters"],
       set: (v) => bcrypt.hashSync(v, bcrypt.genSaltSync(10)),
     },
@@ -96,4 +96,4 @@ usersSchema.pre("save", async function (next) {
   next();
 });
 
-module.exports = model("User", usersSchema);
+export default model("User", usersSchema); // Use ES module export syntax

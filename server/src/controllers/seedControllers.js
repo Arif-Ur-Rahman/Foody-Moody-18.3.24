@@ -1,16 +1,16 @@
-import data from "../data";
-import User from "../models/usersModel";
+import User from "../models/usersModel.js"; // Ensure correct relative path and .js extension
+
 const seedUsers = async (req, res, next) => {
   try {
-    // deleting all users
+    // Deleting all users
     await User.deleteMany({});
-    // inserting user
-    const user = await User.insertMany(data.users);
-    // response back success
-    return res.status(201).json(user);
+    // Inserting users
+    const users = await User.insertMany(data.users);
+    // Respond with the inserted users
+    return res.status(201).json(users);
   } catch (error) {
     next(error);
   }
 };
 
-module.exports = { seedUsers };
+export { seedUsers }; // Use ES module export syntax
