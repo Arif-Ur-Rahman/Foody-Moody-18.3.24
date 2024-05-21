@@ -43,7 +43,7 @@ const Megamenu = () => {
     {
       name: "Netharland Food Items",
       description: "Fresh seafood from Bangladesh",
-      link: "indian-menu",
+      link: "Netherlands-Food",
       icon: Netharlands_Flag,
     },
     {
