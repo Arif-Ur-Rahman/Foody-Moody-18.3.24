@@ -49,19 +49,19 @@ const Megamenu = () => {
     {
       name: "Japanese Food Menu",
       description: "Healthy Japanese Delicious Items",
-      link: "BanglaFood",
+      link: "JapaneseMenu",
       icon: Japanese_Flag,
     },
     {
       name: "Thai Food",
-      description: "Traditional African treats",
-      link: "indian-menu",
+      description: "Traditional Thai Food",
+      link: "ThaiFood",
       icon: Thailand_Flag,
     },
     {
       name: "Chinese Items",
-      description: "Exquisite Japanese dishes",
-      link: "BanglaFood",
+      description: "View Are Chainese Special Items",
+      link: "ChaineseFood",
       icon: Chinese_Flag,
     },
   ];
