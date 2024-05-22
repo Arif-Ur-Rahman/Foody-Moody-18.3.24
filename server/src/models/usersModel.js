@@ -1,13 +1,11 @@
 import { Schema, model } from "mongoose";
-import bcrypt from "bcrypt";
-import { defProfile } from "../secret.js"; // Ensure correct relative path and .js extension
+import { defProfile } from "../secret.js";
 
 // Email validation function
 var validateEmail = function (email) {
   var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   return re.test(email);
 };
-
 const usersSchema = new Schema(
   {
     username: {
@@ -43,12 +41,10 @@ const usersSchema = new Schema(
       type: String,
       required: [true, "Password is required"],
       minlength: [6, "Minimum length is 6 characters"],
-      set: (v) => bcrypt.hashSync(v, bcrypt.genSaltSync(10)),
     },
     gender: {
       type: String,
       enum: ["male", "female", "other"],
-      required: [true, "Gender is required"],
     },
     image: {
       type: String,
@@ -56,11 +52,9 @@ const usersSchema = new Schema(
     },
     address: {
       type: String,
-      required: [true, "User address is required"],
     },
     phone: {
       type: String,
-      required: [true, "User phone number is required"],
     },
     isSupperAdmin: {
       type: Boolean,
@@ -83,17 +77,4 @@ const usersSchema = new Schema(
   { timestamps: true } // Automatically manage createdAt and updatedAt fields
 );
 
-// Pre-save hook to hash the password
-usersSchema.pre("save", async function (next) {
-  if (this.isModified("password") || this.isNew) {
-    try {
-      const salt = await bcrypt.genSalt(10);
-      this.password = await bcrypt.hash(this.password, salt);
-    } catch (err) {
-      return next(err);
-    }
-  }
-  next();
-});
-
-export default model("User", usersSchema); // Use ES module export syntax
+export default model("users", usersSchema);
