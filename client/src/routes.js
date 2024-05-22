@@ -19,6 +19,8 @@ import Deal from "./components/Deal/Deal.jsx";
 import SevenDay from "./components/SevenDay/SevenDay.jsx";
 import NetherlandsFood from "./components/Natherland_Menu/Netherlands.jsx"
 import JapaneseMenu from "./components/JapaneseMenu/JapaneseMenu.jsx";
+import ThaiFood from "./components/ThaiFood/ThaiFood.jsx";
+import ChaineseFood from "./components/ChaineseFood/ChaineseFood.jsx";
 
 const router = createBrowserRouter([
     {
@@ -56,6 +58,14 @@ const router = createBrowserRouter([
     {
         path: "JapaneseMenu",
         element: <JapaneseMenu />,
+    },
+    {
+        path: "ThaiFood",
+        element: <ThaiFood />,
+    },
+    {
+        path: "ChaineseFood",
+        element: <ChaineseFood />,
     },
     {
         path: "BanglaFood",

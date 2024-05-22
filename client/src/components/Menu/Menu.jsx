@@ -59,16 +59,16 @@ const Menu = () => {
           <div className="single-menu">
             <img src={BD} width="162px" height="211px" alt="" />
             
-            <Link to="/BanglaFood" className="menu-link">
-              View BD Menu
+            <Link to="/ThaiFood" className="menu-link">
+              View ThaiFood Menu
             </Link>
           </div>
 
           <div className="single-menu">
             <img src={IND} width="162px" height="211px" alt="" />
             
-            <Link to="/BanglaFood" className="menu-link">
-              View Indian Menu 2
+            <Link to="/ChaineseFood" className="menu-link">
+              View Chainese Food
             </Link>
           </div>
         </div>
