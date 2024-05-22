@@ -2,9 +2,9 @@ import React, { useContext, useState } from "react";
 import styles from "./Menu.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus, faEye } from "@fortawesome/free-solid-svg-icons";
-import hydarabadibiriyani from "../../assets/Food_Image/IndianFood/Hydarabadi.png";
-import Naan from "../../assets/Food_Image/IndianFood/naan.png";
-import Biriyani from "../../assets/Food_Image/IndianFood/ChickenBiriyani.png";
+import SweetCake from "../../assets/NetherlandsFood/Breakfast Cake.png";
+import Chicken_Roll from "../../assets/NetherlandsFood/Chicken Roll.png";
+import ChocolatePettis from "../../assets/NetherlandsFood/Chocolate Pettis.png";
 import Kazu from "../../assets/Food_Image/IndianFood/Kajukatli.png";
 import halwa from "../../assets/Food_Image/IndianFood/gajarhalwa.png";
 import fish from "../../assets/Food_Image/IndianFood/Fishcurry.png";
@@ -15,29 +15,29 @@ import { CartContext } from "../../context/rootContext";
 const products = [
   {
     id: 301,
-    image: hydarabadibiriyani,
-    title: "Hydarabadi Biriyani",
+    image: SweetCake,
+    title: "Sweet Cake",
     oldPrice: 280,
     newPrice: 220,
-    ingredients: "Rice, Spicy Chicken, Borhani",
+    ingredients: "Sweet Cake with Red Fruits",
     quantity: 1,
   },
   {
     id: 302,
-    image: Naan,
-    title: "Butter Naan",
+    image: Chicken_Roll,
+    title: "Chicken Roll",
     oldPrice: 20,
     newPrice: 18,
-    ingredients: "Naan With Butter",
+    ingredients: "Chicken Roll & Evening Snakes",
     quantity: 1,
   },
   {
     id: 303,
-    image: halwa,
-    title: "Gajar Halwa",
+    image: ChocolatePettis,
+    title: "Chocolate Pettis",
     oldPrice: 100,
     newPrice: 95,
-    ingredients: "Gajar Halwa, Sweet and Testy",
+    ingredients: "Chocolate Pettis with mouth watering chocolate flabour",
     quantity: 1,
   },
   {
@@ -78,7 +78,7 @@ const products = [
   },
   {
     id: 8,
-    image: Biriyani,
+    image: ChocolatePettis,
     title: "Delicious Food 8",
     oldPrice: 20,
     newPrice: 18,
