@@ -43,16 +43,16 @@ const Menu = () => {
           <div className="single-menu">
             <img src={JP} width="162px" height="211px" alt="" />
             
-            <Link to="/BanglaFood" className="menu-link">
-              View Pizza Menu
+            <Link to="/Netherlands-Food" className="menu-link">
+              View Dutch Menu
             </Link>
           </div>
 
           <div className="single-menu">
             <img src={NL} width="162px" height="211px" alt="" />
             
-            <Link to="/BanglaFood" className="menu-link">
-              View Dutch Menu
+            <Link to="/JapaneseMenu" className="menu-link">
+              View Japanese Menu
             </Link>
           </div>
 
