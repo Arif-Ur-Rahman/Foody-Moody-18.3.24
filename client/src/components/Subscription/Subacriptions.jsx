@@ -81,13 +81,12 @@ const Subscriptions = () => {
                 <li className="pricing-feature">Multiple Food Order</li>
                 <li className="pricing-feature">Food-Order for Occasion</li>
               </ul>
-              <a
-                href="/"
+              <button 
                 className="pricing-action"
                 onClick={() => handleSubscribeClick("Basic", 9.9)}
               >
                 Subscribe
-              </a>
+              </button>
             </div>
 
             <div className="pricing-item">
@@ -104,7 +103,6 @@ const Subscriptions = () => {
                 <li className="pricing-feature">7 Days Order Bonus</li>
               </ul>
               <a
-                href="/"
                 className="pricing-action"
                 onClick={() => handleSubscribeClick("Standard", 29.9)}
               >
@@ -128,7 +126,6 @@ const Subscriptions = () => {
                 <li className="pricing-feature">Chef-At-Home Service</li>
               </ul>
               <a
-                href="/"
                 className="pricing-action"
                 onClick={() => handleSubscribeClick("Premium", 59.9)}
               >

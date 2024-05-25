@@ -21,6 +21,7 @@ import NetherlandsFood from "./components/Natherland_Menu/Netherlands.jsx"
 import JapaneseMenu from "./components/JapaneseMenu/JapaneseMenu.jsx";
 import ThaiFood from "./components/ThaiFood/ThaiFood.jsx";
 import ChaineseFood from "./components/ChaineseFood/ChaineseFood.jsx";
+import SignUp from "./components/Sign-Up/Sign-Up.jsx";
 
 const router = createBrowserRouter([
     {
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
     {
         path: "Login",
         element: <Login />
+    },
+    {
+        path: "SignUp",
+        element: <SignUp />
     },
     {
         path: "Payment",
