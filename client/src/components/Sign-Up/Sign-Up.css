@@ -27,6 +27,9 @@
   margin: 0 auto;
   top: 50px;
 }
+.login-link-color{
+  color: rgb(3, 249, 3);
+}
 
 .login-form h2 {
   margin-bottom: 20px;

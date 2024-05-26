@@ -46,7 +46,7 @@ const Login = () => {
         <h5>
           Click To{" "}
           <span>
-            <Link to="/signup" className="login-lik-color">
+            <Link to="/signup" className="login-link-color">
               SignUp
             </Link>
           </span>

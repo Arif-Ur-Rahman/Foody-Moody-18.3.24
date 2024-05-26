@@ -51,19 +51,19 @@ function SignUp() {
             </div>
             <div className="form-group">
               <input
-                type="text"
-                name="contact"
-                id="contact"
-                placeholder="Contact"
+                type="password"
+                name="password"
+                id="confirm_password"
+                placeholder="Confirm Password"
                 required
               />
             </div>
             <div className="form-group">
               <input
-                type="file"
-                name="photo"
-                id="photo"
-                accept="image/*"
+                type="text"
+                name="contact"
+                id="contact"
+                placeholder="Contact"
                 required
               />
             </div>
@@ -76,8 +76,18 @@ function SignUp() {
                 required
               />
             </div>
+            <div className="form-group">
+              <input
+                type="file"
+                name="photo"
+                id="photo"
+                accept="image/*"
+                required
+              />
+            </div>
+            
             <ReCAPTCHA
-              sitekey="your-site-key-here"
+              sitekey="6LeZAKApAAAAADIDKMBS_b0nhKqsNWLQB04fgP9a"
               onChange={handleCaptchaChange}
             />
             <button type="submit" className="login-btn">
@@ -87,8 +97,8 @@ function SignUp() {
           <h5>Already Have An Account?</h5>
           <h5>
             Click To{" "}
-            <span>
-              <Link to="/Login" className="login-lik-color">
+            <span >
+              <Link to="/Login" className="login-link-color">
                 Login
               </Link>
             </span>
