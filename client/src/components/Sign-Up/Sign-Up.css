@@ -13,7 +13,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .login-form {
@@ -23,6 +23,8 @@
   box-shadow: 5px 20px 50px #000;
   color: white;
   padding: 20px;
+  margin: 0 auto;
+  top: 50px;
 }
 
 .login-form h2 {
