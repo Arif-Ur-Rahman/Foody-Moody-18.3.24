@@ -1,17 +1,18 @@
 // Login.js
 
-import React, { useState } from 'react';
-import './Login.css';
+import React, { useState } from "react";
+import "./Login.css";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add your login logic here
-    console.log('Email:', email);
-    console.log('Password:', password);
+    console.log("Email:", email);
+    console.log("Password:", password);
   };
 
   return (
@@ -22,7 +23,8 @@ const Login = () => {
           <input
             type="email"
             id="email"
-            placeholder="Email" required=""
+            placeholder="Email"
+            required=""
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -30,13 +32,25 @@ const Login = () => {
         <div className="form-group">
           <input
             type="password"
-            placeholder="Password" required=""
+            placeholder="Password"
+            required=""
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit" className="login-btn">Login</button>
+        <button type="submit" className="login-btn">
+          Login
+        </button>
+        <h5>Don't Have Account?</h5>
+        <h5>
+          Click To{" "}
+          <span>
+            <Link to="/signup" className="login-lik-color">
+              SignUp
+            </Link>
+          </span>
+        </h5>
       </form>
     </div>
   );
