@@ -8,9 +8,9 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // api route
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.status(200).send({
-    message: "API testing is working fine",
+    message: "API is working fine",
   });
 });
 app.use("/api/auth/", authRoute);
