@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Sign-Up.css";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+
 function SignUp() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const [captchaValue, setCaptchaValue] = useState(null);
+
+  const onSubmit = (data) => {
+    if (!captchaValue) {
+      alert("Please complete the CAPTCHA");
+      return;
+    }
+    console.log(data);
+  };
+
   const handleCaptchaChange = (value) => {
     console.log("Captcha value:", value);
+    setCaptchaValue(value);
+  };
+
+  const validatePassword = (value) => {
+    return value === watch("password") || "Passwords do not match";
   };
 
   return (
@@ -12,69 +36,105 @@ function SignUp() {
       <div className="background-design">
         <div className="login-form">
           <h2>Create Account</h2>
-          <form action="/register" method="post">
+          <form onSubmit={handleSubmit(onSubmit)} method="post">
             <div className="form-group">
               <input
                 type="text"
-                name="username"
                 id="username"
                 placeholder="UserName"
-                required
+                {...register("username", { required: true })}
               />
+              {errors.username && (
+                <span className="text-danger">UserName is required</span>
+              )}
             </div>
             <div className="form-group">
               <input
                 type="text"
-                name="name"
                 id="name"
                 placeholder="Name"
-                required
+                {...register("name", { required: true })}
               />
+              {errors.name && (
+                <span className="text-danger">Name is required</span>
+              )}
             </div>
             <div className="form-group">
               <input
                 type="email"
-                name="email"
                 id="email"
                 placeholder="Email"
-                required
+                {...register("email", {
+                  required: "Email is required",
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "Invalid email address",
+                  },
+                })}
               />
+              {errors.email && (
+                <span className="text-danger">{errors.email.message}</span>
+              )}
             </div>
-            <div className="form-group">
+            <div className="input-with-icon-div form-group">
               <input
+                className="custom-input"
                 type="password"
-                name="password"
                 id="password"
                 placeholder="Password"
-                required
+                {...register("password", {
+                  required: "Password is required",
+                  minLength: {
+                    value: 4,
+                    message: "Password must be more than 4 characters",
+                  },
+                  maxLength: {
+                    value: 12,
+                    message: "Password cannot exceed 12 characters",
+                  },
+                })}
               />
+              {errors.password && (
+                <span className="text-danger">{errors.password.message}</span>
+              )}
             </div>
-            <div className="form-group">
+            <div className="input-with-icon-div form-group">
               <input
                 type="password"
-                name="password"
                 id="confirm_password"
                 placeholder="Confirm Password"
-                required
+                {...register("confirm_password", {
+                  required: "Confirm password is required",
+                  validate: validatePassword,
+                })}
               />
+              {errors.confirm_password && (
+                <span className="text-danger">
+                  {errors.confirm_password.message}
+                </span>
+              )}
             </div>
             <div className="form-group">
               <input
                 type="text"
-                name="contact"
-                id="contact"
-                placeholder="Contact"
-                required
+                id="phone"
+                placeholder="Phone"
+                {...register("phone", { required: "Phone number is required" })}
               />
+              {errors.phone && (
+                <span className="text-danger">{errors.phone.message}</span>
+              )}
             </div>
             <div className="form-group">
               <input
                 type="text"
-                name="address"
                 id="address"
                 placeholder="Address"
-                required
+                {...register("address", { required: "Address is required" })}
               />
+              {errors.address && (
+                <span className="text-danger">{errors.address.message}</span>
+              )}
             </div>
             <div className="form-group">
               <input
@@ -82,10 +142,10 @@ function SignUp() {
                 name="photo"
                 id="photo"
                 accept="image/*"
-                required
+                {...register("photo")}
               />
             </div>
-            
+
             <ReCAPTCHA
               sitekey="6LeZAKApAAAAADIDKMBS_b0nhKqsNWLQB04fgP9a"
               onChange={handleCaptchaChange}
@@ -97,7 +157,7 @@ function SignUp() {
           <h5>Already Have An Account?</h5>
           <h5>
             Click To{" "}
-            <span >
+            <span>
               <Link to="/Login" className="login-link-color">
                 Login
               </Link>
