@@ -198,7 +198,42 @@
   padding: 1rem;
   z-index: 10;
 }
-
+.anonymous-user {
+  position: relative;
+  transition: ease-in-out;
+}
+.profile-div {
+  height: 40px;
+  width: 37px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: black;
+}
+.profile-div img {
+  width: 100%;
+  border-radius: 50%;
+  border: 2px solid rgb(3, 249, 3);
+  padding: 2px;
+}
+.login-user {
+  position: absolute;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 3rem;
+  border-radius: 5px;
+  z-index: 1;
+  top: 30px;
+  right: -3%;
+  margin-top: 5px;
+}
+.login-user a {
+  color: black;
+  margin: 5px auto;
+}
+.login-user a:hover {
+  color: #1d9b34;
+}
 .user-dropdown ul {
   list-style: none;
   padding: 0;
@@ -208,18 +243,17 @@
   margin-bottom: 0.5rem;
 }
 
-/* Added */
 .app__navbar-links li:hover .megamenu {
   display: block;
 }
 
 .megamenu {
-  display: none; /* Updated */
-  position: absolute; /* Updated */
-  top: 100%; /* Updated */
-  left: 0; /* Updated */
-  background-color: var(--color-black); /* Added */
-  padding: 1rem; /* Added */
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-black);
+  padding: 1rem;
 }
 
 .megamenu ul {
