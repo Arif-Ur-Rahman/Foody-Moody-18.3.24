@@ -157,7 +157,7 @@ const Navbar = () => {
             </div>
             {showLogin && (
               <div className="login-user">
-                <Link to="/profile">Profile</Link>
+                <Link to="/UserProfile">Profile</Link>
                 <Link to="/settings">Settings</Link>
                 <Link to="/privacy">Privacy</Link>
                 <Link to="/log-out">LogOut</Link>
