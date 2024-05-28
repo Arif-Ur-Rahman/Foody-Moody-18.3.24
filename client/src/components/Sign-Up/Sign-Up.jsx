@@ -1,25 +1,47 @@
 import React, { useState } from "react";
 import "./Sign-Up.css";
 import ReCAPTCHA from "react-google-recaptcha";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function SignUp() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
+    reset,
     watch,
     formState: { errors },
   } = useForm();
 
   const [captchaValue, setCaptchaValue] = useState(null);
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     if (!captchaValue) {
-      alert("Please complete the CAPTCHA");
+      toast.error("Please complete the CAPTCHA");
       return;
     }
-    console.log(data);
+
+    const formData = new FormData();
+    for (const key in data) {
+      formData.append(key, data[key]);
+    }
+
+    try {
+      const res = await axios.post(
+        `${process.env.REACT_APP_SERVER_API_URL}/api/auth/register/`,
+        formData
+      );
+      toast.success("Registration successfully");
+      navigate("/login");
+      reset();
+    } catch (error) {
+      console.error(error);
+      toast.error(error);
+    }
   };
 
   const handleCaptchaChange = (value) => {
@@ -33,6 +55,7 @@ function SignUp() {
 
   return (
     <div className="login-container">
+      <ToastContainer />
       <div className="background-design">
         <div className="login-form">
           <h2>Create Account</h2>
@@ -42,10 +65,17 @@ function SignUp() {
                 type="text"
                 id="username"
                 placeholder="UserName"
-                {...register("username", { required: true })}
+                {...register("username", {
+                  required: "UserName is required",
+                  pattern: {
+                    value:
+                      /^[a-zA-Z0-9]+([a-zA-Z0-9](_|-| )[a-zA-Z0-9])*[a-zA-Z0-9]+$/,
+                    message: "Invalid UserName",
+                  },
+                })}
               />
               {errors.username && (
-                <span className="text-danger">UserName is required</span>
+                <span className="text-danger">{errors.username.message}</span>
               )}
             </div>
             <div className="form-group">
@@ -53,10 +83,10 @@ function SignUp() {
                 type="text"
                 id="name"
                 placeholder="Name"
-                {...register("name", { required: true })}
+                {...register("name", { required: "Name is required" })}
               />
               {errors.name && (
-                <span className="text-danger">Name is required</span>
+                <span className="text-danger">{errors.name.message}</span>
               )}
             </div>
             <div className="form-group">
@@ -158,7 +188,7 @@ function SignUp() {
           <h5>
             Click To{" "}
             <span>
-              <Link to="/Login" className="login-link-color">
+              <Link to="/login" className="login-link-color">
                 Login
               </Link>
             </span>

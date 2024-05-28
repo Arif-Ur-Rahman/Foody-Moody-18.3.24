@@ -2,20 +2,20 @@ import React, { useContext, useEffect, useState } from "react";
 import "./Navbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
-import { FaShoppingCart, FaSearch, FaUser, FaEye } from "react-icons/fa";
+import { FaShoppingCart, FaUser, FaEye } from "react-icons/fa";
 import images from "../../constants/images";
 import { Link } from "react-router-dom";
 import Megamenu from "../Megamenu/Megamenu";
 import SubscriptionMegamenu from "../SubscriptionMegamenu/SubscriptionMegamenu";
 import { CartContext } from "../../context/rootContext";
-
+import prof from "../../assets/79484476.jpg";
 const Navbar = () => {
   const { cart, setCart } = useContext(CartContext);
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showSubscriptionMegamenu, setShowSubscriptionMegamenu] =
     useState(false);
   const [showCartModal, setShowCartModal] = useState(false);
-  const [showSearchField, setShowSearchField] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
   useEffect(() => {
     if (cart.length > 0) {
       setShowCartModal(true);
@@ -35,7 +35,10 @@ const Navbar = () => {
     );
     setCart(updatedCart);
   };
-
+  const [isUserLogin, setIsUserLogin] = useState(true);
+  const toggleShowHide = () => {
+    setShowLogin(!showLogin);
+  };
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
@@ -147,24 +150,33 @@ const Navbar = () => {
         >
           {cart && Array.isArray(cart) && cart.length > 0 ? cart.length : 0}
         </div>
-        <div
-          className="icon"
-          onClick={() => setShowSearchField(!showSearchField)}
-        >
-          <FaSearch />
-          {showSearchField && (
-            <input
-              type="text"
-              className="search-field"
-              placeholder="Search..."
-            />
-          )}
-        </div>
-        <div className="icon">
-          <Link to="/login">
-            <FaUser />
-          </Link>
-        </div>
+        {isUserLogin === true ? (
+          <div className="anonymous-user">
+            <div className="profile-div" onClick={toggleShowHide}>
+              <img className="profile" src={prof} alt="sakib-images" />
+            </div>
+            {showLogin && (
+              <div className="login-user">
+                <Link to="/profile">Profile</Link>
+                <Link to="/settings">Settings</Link>
+                <Link to="/privacy">Privacy</Link>
+                <Link to="/log-out">LogOut</Link>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="anonymous-user">
+            <div className="click-icons icon" onClick={toggleShowHide}>
+              <FaUser />
+            </div>
+            {showLogin && (
+              <div className="login-user">
+                <Link to="/login">LogIn</Link>
+                <Link to="/signup">SignUp</Link>
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       <div className="app__navbar-smallscreen">
