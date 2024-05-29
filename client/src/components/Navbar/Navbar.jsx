@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import "./Navbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
@@ -9,13 +9,21 @@ import Megamenu from "../Megamenu/Megamenu";
 import SubscriptionMegamenu from "../SubscriptionMegamenu/SubscriptionMegamenu";
 import { CartContext } from "../../context/rootContext";
 import prof from "../../assets/79484476.jpg";
+
 const Navbar = () => {
   const { cart, setCart } = useContext(CartContext);
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [showSubscriptionMegamenu, setShowSubscriptionMegamenu] =
-    useState(false);
+  const [showSubscriptionMegamenu, setShowSubscriptionMegamenu] = useState(false);
   const [showCartModal, setShowCartModal] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
+  const cartModalRef = useRef(null);
+
+  useEffect(() => {
+    if (showCartModal && cartModalRef.current) {
+      cartModalRef.current.scrollTop = cartModalRef.current.scrollHeight;
+    }
+  }, [cart, showCartModal]);
+
   useEffect(() => {
     if (cart.length > 0) {
       setShowCartModal(true);
@@ -23,6 +31,7 @@ const Navbar = () => {
       setShowCartModal(false);
     }
   }, [cart]);
+
   const calculateTotal = (cart) => {
     return cart
       .reduce((total, item) => total + item.newPrice * item.quantity, 0)
@@ -35,10 +44,12 @@ const Navbar = () => {
     );
     setCart(updatedCart);
   };
+
   const [isUserLogin, setIsUserLogin] = useState(true);
   const toggleShowHide = () => {
     setShowLogin(!showLogin);
   };
+
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
@@ -87,10 +98,14 @@ const Navbar = () => {
               className="cart-modal-container"
               onClick={() => setShowCartModal(false)}
             >
-              <div className="cart-modal" onClick={(e) => e.stopPropagation()}>
+              <div
+                className="cart-modal"
+                ref={cartModalRef}
+                onClick={(e) => e.stopPropagation()}
+              >
                 <div>
                   {cart && Array.isArray(cart) && cart.length > 0 ? (
-                    cart.map((item, index) => (
+                    cart.map((item) => (
                       <div key={item.id} className="cart-item">
                         <div className="cart-item-image">
                           <img src={item.image} alt={item.title} />
@@ -136,9 +151,8 @@ const Navbar = () => {
                   <span>Total:</span>
                   <span>{calculateTotal(cart)}</span>
                 </div>
-                {/* Add the link below the cart */}
                 <div className="btn">
-                <div
+                  <div
                     className="close-modal-link"
                     onClick={() => setShowCartModal(false)}
                   >
@@ -147,7 +161,6 @@ const Navbar = () => {
                   <div className="proceed-to-checkout">
                     <Link to="/cart">Proceed to Checkout</Link>
                   </div>
-                  
                 </div>
               </div>
             </div>
