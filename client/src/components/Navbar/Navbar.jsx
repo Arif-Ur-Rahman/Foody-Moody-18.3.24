@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import "./Navbar.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
@@ -17,6 +18,7 @@ const Navbar = () => {
   const [showCartModal, setShowCartModal] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const cartModalRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     if (showCartModal && cartModalRef.current) {
@@ -25,12 +27,15 @@ const Navbar = () => {
   }, [cart, showCartModal]);
 
   useEffect(() => {
-    if (cart.length > 0) {
-      setShowCartModal(true);
+    if (cart.length > 0 ) {
+      if(location.pathname === "/BanglaFood" || location.pathname === "/indian-menu" || location.pathname ==="/JapaneseMenu" || location.pathname ==="/Netherlands-Food" || location.pathname ==="/ThaiFood" || location.pathname ==="/ChaineseFood"){
+        setShowCartModal(true);
+      }
+      
     } else {
       setShowCartModal(false);
     }
-  }, [cart]);
+  }, [cart, location.pathname]);
 
   const calculateTotal = (cart) => {
     return cart
