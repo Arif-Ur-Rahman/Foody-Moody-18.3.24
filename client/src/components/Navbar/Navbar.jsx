@@ -137,8 +137,17 @@ const Navbar = () => {
                   <span>{calculateTotal(cart)}</span>
                 </div>
                 {/* Add the link below the cart */}
-                <div className="proceed-to-checkout">
-                  <Link to="/cart">Proceed to Checkout</Link>
+                <div className="btn">
+                <div
+                    className="close-modal-link"
+                    onClick={() => setShowCartModal(false)}
+                  >
+                    <span>Close</span>
+                  </div>
+                  <div className="proceed-to-checkout">
+                    <Link to="/cart">Proceed to Checkout</Link>
+                  </div>
+                  
                 </div>
               </div>
             </div>
