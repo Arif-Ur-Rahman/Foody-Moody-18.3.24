@@ -71,7 +71,18 @@
   font-size: small;
   scroll-behavior: smooth;
 }
-
+@media (max-width: 600px) {
+  .cart-modal {
+    right: 10px;
+    left: 10px; /* Center the modal by giving some space on the left */
+    top: 50px;
+    width: calc(100% - 20px); /* Adjust width to fit within the viewport */
+    max-height: 70vh; /* Slightly reduce the max height for better fit */
+    height: 200px; /* Allow the height to adjust based on content */
+    padding: 0.5rem; /* Reduce padding for small screens */
+    font-size: x-small; /* Adjust font size for better readability */
+  }
+}
 .cart-icon {
   display: flex;
   align-items: center;
