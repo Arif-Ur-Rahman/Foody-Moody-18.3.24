@@ -122,14 +122,17 @@ function Cart() {
               </tr>
             </tbody>
           </table>
-          <Link to="/payment" className="proceed-to-pay">
+          {/* <Link to="/payment" className="proceed-to-pay">
             Proceed to Pay
-          </Link>
+          </Link> */}
         </div>
         {/* Order More Button */}
         <div className="order-more">
+        <Link to="/payment" className="proceed-to-pay">
+            Proceed to Pay
+          </Link>
           <Link to="/menu" className="order-more-btn">
-            Click Here To Order More
+            Order More
           </Link>
         </div>
       </div>
