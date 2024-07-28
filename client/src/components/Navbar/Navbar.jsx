@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import Megamenu from "../Megamenu/Megamenu";
 import SubscriptionMegamenu from "../SubscriptionMegamenu/SubscriptionMegamenu";
 import { CartContext } from "../../context/rootContext";
-import prof from "../../assets/79484476.jpg";
+import prof from "../../assets/Me.jpg";
 
 const Navbar = () => {
   const { cart, setCart } = useContext(CartContext);
@@ -185,9 +185,9 @@ const Navbar = () => {
             {showLogin && (
               <div className="login-user">
                 <Link to="/UserProfile">Profile</Link>
-                <Link to="/settings">Settings</Link>
+                {/* <Link to="/settings">Settings</Link>
                 <Link to="/privacy">Privacy</Link>
-                <Link to="/log-out">LogOut</Link>
+                <Link to="/log-out">LogOut</Link> */}
               </div>
             )}
           </div>
